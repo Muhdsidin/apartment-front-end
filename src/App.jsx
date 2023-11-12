@@ -16,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/upload-rooms" element={<Room />} />
         <Route path="/real/admin" element={<Home />} />
+        <Route path="/" element={<>hello wolrd </>} />
 
 
       </Routes>
