@@ -1,8 +1,9 @@
 
 import { Route, Routes, useLocation, useParams } from "react-router-dom"
 import Header from "./components/Header/Header"
-import Room from "./(admin)/Room/Room";
-import Home from "./(admin)/Home/Home";
+import Room from "./components/Room/Room";
+import Home from './Pages/Home'
+import Buildings from "./Pages/AddBuilding";
 function App() {
   const location = useLocation();
   console.log(location.pathname);
@@ -15,8 +16,8 @@ function App() {
       {shouldRenderHeader && <Header />}
       <Routes>
         <Route path="/upload-rooms" element={<Room />} />
-        <Route path="/real/admin" element={<Home />} />
-        <Route path="/" element={<>hello wolrd </>} />
+        <Route path="/Buildings" element={<Buildings/>}/>
+        <Route path="/" element={<Home/>} />
 
 
       </Routes>
