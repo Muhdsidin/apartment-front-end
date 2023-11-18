@@ -36,7 +36,7 @@ function Room() {
       console.log(error)
     }
   };
-  console.log(imageOne)
+ 
 
   return (
     <Container>
