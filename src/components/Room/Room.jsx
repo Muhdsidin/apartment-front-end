@@ -10,7 +10,7 @@ import axios from 'axios'
 function Room() {
   const [title, setTitle] = useState("");
   const [prize, setPrize] = useState("");
-  const [cat, setCate] = useState("");
+  const [roomNumber,setRoomNumber]=useState()
  /* const [imageOne, setImageOne] = useState("");
   const [imageTwo, setImageTwo] = useState("");
   const [imageThree, setImageThree] = useState("");*/
@@ -44,33 +44,54 @@ function Room() {
         <Col xs={12} md={8}>
           <div className="div">
             <Form onSubmit={handleSubmit}>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="mb-3" controlId="formBasicTitle">
                 <Form.Label>Enter Title</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Enter Title"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
+                  required
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicRoomNumber">
+                <Form.Label>Room number</Form.Label>
+                <Form.Control
+                  type="number"
+                  required
+                  placeholder="Enter The Room Number"
+                  value={roomNumber}
+                  onChange={(e) => setRoomNumber(e.target.value)}
                 />
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Prize</Form.Label>
+              <Form.Group className="mb-3" controlId="formBasicPrice">
+                <Form.Label>Price</Form.Label>
                 <Form.Control
                   type="number"
+                  required
                   placeholder="Enter The Prize"
                   value={prize}
+                  
                   onChange={(e) => setPrize(e.target.value)}
                 />
               </Form.Group>
+              <p>Add Room To:-</p>
+              <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Check type="checkbox" label="Building 1"  required />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Check type="checkbox" label="Building 2"  required />
+              </Form.Group>
+
 
             
 
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
+                <Form.Check type="checkbox" label="Check me out"  required />
               </Form.Group>
 
-              <Button variant="primary" type="submit">
+              <Button variant="secondary" type="submit">
                 Submit
               </Button>
             </Form>

@@ -1,7 +1,7 @@
 
 import { Route, Routes, useLocation, useParams } from "react-router-dom"
 import Header from "./components/Header/Header"
-
+import TenentAdd from "./Pages/TenentAdd";
 import Home from './Pages/Home'
 import Buildings from "./Pages/AddBuilding";
 import Room from './Pages/AddRooms'
@@ -18,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/room" element={<Room />} />
         <Route path="/buildings" element={<Buildings/>}/>
+        <Route path="/addtenent" element={<TenentAdd/>}/>
         <Route path="/" element={<Home/>} />
         
 
