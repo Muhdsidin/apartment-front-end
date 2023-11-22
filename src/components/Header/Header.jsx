@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <Navbar bg="dark" expand="lg" variant="dark">
+    <Navbar  expand="lg" variant="dark" style={{background:'#BC986A'}}>
       <Container>
         <Navbar.Brand href="/real/admin">Admin Panel</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
