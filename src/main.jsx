@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { HashRouter , BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
- <BrowserRouter basename="/apartment-front-end">
+ <BrowserRouter basename="/src">
             <App />
         </BrowserRouter>
 );
