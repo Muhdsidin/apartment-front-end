@@ -3,10 +3,10 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-
+import './Header.css'
 function Header() {
   return (
-    <Navbar  expand="lg" variant="dark" style={{background:'#BC986A'}}>
+    <Navbar  expand="lg" variant="dark" className='nav'>
       <Container>
         <Navbar.Brand href="/real/admin">Admin Panel</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

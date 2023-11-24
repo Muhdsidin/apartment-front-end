@@ -104,6 +104,9 @@ function UploadBuildings() {
                 <br />
 
                 <button type="submit" required class="btn btn-secondary">Upload</button>
+                <div class="box-3">
+ 
+</div>
               </form>
             </div>
           </Col>

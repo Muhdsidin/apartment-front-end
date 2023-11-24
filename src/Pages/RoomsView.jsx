@@ -1,13 +1,13 @@
 import React from 'react'
-import AddTenent from '../components/AddTenent/AddTenent'
+import ViewRooms from '../components/ViewRooms/ViewRooms'
 import Header from '../components/Header/Header'
-function TenentAdd() {
+export default function RoomsView() {
   return (
     <div>
       <Header/>
-      <AddTenent/>
+      <ViewRooms/>
     </div>
   )
 }
 
-export default TenentAdd
+

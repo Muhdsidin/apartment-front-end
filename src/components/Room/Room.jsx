@@ -73,7 +73,7 @@ function Room() {
                   placeholder="Enter The Prize"
                   value={prize}
                   
-                  onChange={(e) => setPrize(e.target.value)}
+                  onChange={(e) => setPrize(e.target.value)}  
                 />
               </Form.Group>
               <p>Add Room To:-</p>

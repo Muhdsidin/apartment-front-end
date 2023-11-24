@@ -1,5 +1,5 @@
 import React from 'react'
-import './Banner.css';
+import './Banner.css'
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -19,10 +19,17 @@ function Banner() {
       <Row className="justify-content-center">
       <a href="/room" className='box-3 btn btn-secondary' style={{ marginTop: '1em',width:'10em' }}>Upload Rooms</a>
       </Row>
-
       <Row className="justify-content-center">
-      <a href="/addtenent" className='box-3 btn btn-secondary' style={{ marginTop: '1em',width:'10em' }}>Add Tenent</a>
+      <a href="/viewrooms" className='box-3 btn btn-secondary' style={{ marginTop: '1em',width:'10em' }}>View Rooms</a>
       </Row>
+      <Row className="justify-content-center">
+      <div class="box-3">
+ 
+</div>
+      </Row>
+      
+
+    
      </Container>
      
      
