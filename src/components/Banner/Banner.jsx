@@ -10,17 +10,17 @@ function Banner() {
     <div>
      <Container>
       <Row className="justify-content-center">
-      <a href="/buildings" className='box-3 btn btn-secondary' style={{ marginTop: '4em',width:'10em'
+      <a href="/buildings" className='box-3 btn btn-secondary' data-aos='zoom-in' data-aos-duration="3000" style={{ marginTop: '4em',width:'10em'
     }} >Upload Buildings</a>
       
  
       </Row>
       
       <Row className="justify-content-center">
-      <a href="/room" className='box-3 btn btn-secondary' style={{ marginTop: '1em',width:'10em' }}>Upload Rooms</a>
+      <a href="/room" className='box-3 btn btn-secondary' data-aos='fade-up'data-aos-duration="3000" style={{ marginTop: '1em',width:'10em' }}>Upload Rooms</a>
       </Row>
       <Row className="justify-content-center">
-      <a href="/viewrooms" className='box-3 btn btn-secondary' style={{ marginTop: '1em',width:'10em' }}>View Rooms</a>
+      <a href="/viewrooms" className='box-3 btn btn-secondary'  data-aos='fade-up' style={{ marginTop: '1em',width:'10em' }}>View Rooms</a>
       </Row>
       <Row className="justify-content-center">
       <div class="box-3">
