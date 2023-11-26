@@ -1,9 +1,20 @@
 import React from 'react'
+import Row from 'react-bootstrap/Row';
 import './ViewRooms.css'
+import  Container  from 'react-bootstrap/Container';
 function ViewRooms() {
   return (
     <div>
-       <section className='rc'>
+      <Container style={{width:'8em',marginTop:'5em'}}>
+        <Row>
+        <a href="/building-1" className='building-1'>Buildind-1</a>
+        </Row>
+      </Container>
+       {/* <section className='rc'>
+      <
+     
+        
+        
        
        <div class="card">
        
@@ -14,7 +25,7 @@ function ViewRooms() {
     <p class="text-body">Status:not booked yet</p>
 
   </div>
-  <div class="card-footer" to='/addtenent'>
+  <div class="card-footer" >
   <span class="text-title">500 DHS</span>
   <div class="card-button">
     <svg class="svg-icon" viewBox="0 0 20 20">
@@ -27,7 +38,7 @@ function ViewRooms() {
 
 
 
-          </section>
+          </section> */}
     </div>
   )
 }
