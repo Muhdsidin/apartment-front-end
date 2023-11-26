@@ -22,6 +22,7 @@ function Room() {
     //formData.append("images", imageOne)
     formData.append("title", title)
     formData.append("prize", prize)
+    alert('Successfully Uploaded')
     // Add your form submission logic here
 
     const response = await axios("https://apartment-one.vercel.app/upload",{
@@ -34,15 +35,16 @@ function Room() {
     console.log(response.data)
     } catch (error) {
       console.log(error)
+      alert(error)
     }
   };
  
 
   return (
     <Container>
-      <Row className="justify-content-center">
+      <Row className="justify-content-center" >
         <Col xs={12} md={8}>
-          <div className="div">
+          <div className="div" >
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicTitle">
                 <Form.Label>Enter Title</Form.Label>
@@ -91,9 +93,9 @@ function Room() {
                 <Form.Check type="checkbox" label="Check me out"  required />
               </Form.Group>
 
-              <Button variant="secondary" type="submit">
-                Submit
-              </Button>
+              <button className='btn-sub' type="submit">
+                Upload
+              </button>
             </Form>
           </div>
         </Col>

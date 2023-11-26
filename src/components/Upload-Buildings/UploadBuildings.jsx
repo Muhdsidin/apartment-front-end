@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './UploadBuildings.css'
+import { render } from 'https://cdn.skypack.dev/react-dom'
 function UploadBuildings() {
   const [name, setName] = useState('')
   const [address, setAddress] = useState('')
@@ -19,6 +20,7 @@ function UploadBuildings() {
       formData.append('state', state)
       formData.append('city', city)
       formData.append('zip', zip)
+      alert('successfully Uploaded')
 
       const response = await axios('https://apartment-one.vercel.app/upload-building', {
         method: 'POST',
@@ -28,7 +30,9 @@ function UploadBuildings() {
       console.log(response.data);
     } catch (error) {
       console.log(error);
+      alert(error)
     }
+    
 
 
   }
@@ -103,10 +107,8 @@ function UploadBuildings() {
                 </div>
                 <br />
 
-                <button type="submit" required class="btn btn-secondary">Upload</button>
-                <div class="box-3">
- 
-</div>
+                <button type="submit" required class="btn-submit">Upload</button>
+              
               </form>
             </div>
           </Col>
