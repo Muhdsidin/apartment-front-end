@@ -41,7 +41,7 @@ function Room() {
  
 
   return (
-    <Container>
+    <Container style={{marginTop:'7em'}}>
       <Row className="justify-content-center" >
         <Col xs={12} md={8}>
           <div className="div" >

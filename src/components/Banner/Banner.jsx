@@ -8,7 +8,7 @@ function Banner() {
   
   return (
     <div>
-     <Container>
+     <Container style={{marginTop:'5em'}}>
       <Row className="justify-content-center">
       <a href="/buildings" className='box-3 ' data-aos='zoom-in' data-aos-duration="2500" style={{ marginTop: '4em',width:'10em'
     }} >Upload Buildings</a>
