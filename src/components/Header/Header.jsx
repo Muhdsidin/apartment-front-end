@@ -67,7 +67,7 @@ function Header() {
                
                 
                 <li className="with-submenu" onClick={handleSubMenuToggle}>
-                  <a href="#">Blog</a>
+                  <a href="#">Other</a>
                   {isSubMenuOpen && (
                     <div className="submenu">
                       <ul className="submenu-inner">
