@@ -15,16 +15,18 @@ function UploadBuildings() {
   const HandleSubmit=async(e)=>{
     try{
       e.preventDefault()
-      const formData=new FormData()
-      formData.append('name',name)
-      formData.append('address',address)
-      formData.append('state',state)
-      formData.append('city',city)
-      formData.append('zip',zip)
+     
 
-      const response=await axios('https://apartment-one.vercel.app/upload-building',{
+      const response=await axios('http://localhost:3000/upload-building',{
         method:'POST',
-        Data:formData,
+        data:{
+          name,
+          zip,
+        
+          state,
+          address,
+          city
+        },
         
       })
       console.log(response.data);
@@ -99,7 +101,7 @@ function UploadBuildings() {
   </div>
   <br />
   
-  <button type="submit" class="btn btn-primary">Sign in</button>
+  <button type="submit" class="btn btn-primary">Upload </button>
 </form>
         </div>
         </Col>
