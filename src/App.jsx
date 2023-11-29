@@ -1,32 +1,36 @@
-// App.js
 
-import { Route, Routes, useLocation } from "react-router-dom";
-import Header from "./components/Header/Header";
-import Home from './Pages/Home';
+import { Route, Routes, useLocation, useParams } from "react-router-dom"
+import Header from "./components/Header/Header"
+import RoomsView from "./Pages/RoomsView";
+import Home from './Pages/Home'
 import Buildings from "./Pages/AddBuilding";
-import Room from './Pages/AddRooms';
-import AllBuild from "./Pages/all-building/AllBuild";
-import Allroom from "./Pages/all-room-categ/Allroom";
-import Rooms from "./Pages/room/Room";
-
+import Room from './Pages/AddRooms'
+import Building1View from "./Pages/Building1View";
 function App() {
   const location = useLocation();
-  const shouldRenderHeader = location.pathname === "/real/admin" || location.pathname === "/upload-rooms" || location.pathname === "/upload-building";
+  console.log(location.pathname);
+  const shouldRenderHeader = location.pathname === "/real/admin" || location.pathname === "/upload-rooms" || location.pathname === "/upload-building" ;
+
+  
 
   return (
     <div>
       {shouldRenderHeader && <Header />}
       <Routes>
         <Route path="/room" element={<Room />} />
-        <Route path="/buildings" element={<Buildings />} />
-       { /*<Route path="/building" element={<Building />} />*/} {/* Add this line */}
-        <Route path="/" element={<Home />} />
-        <Route  path="/all-building" element={<AllBuild />}/>
-        <Route  path="/building/:id" element={<Allroom />}/>
-        <Route  path="/rooms/:id" element={<Rooms/>}/>
+        <Route path="/buildings" element={<Buildings/>}/>
+      <Route path='/viewrooms' element={<RoomsView/>}/>
+      <Route path="/building1" element={<Building1View/>}/>
+        <Route path="/" element={<Home/>} />
+        
+
+
+
       </Routes>
+
+    
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
