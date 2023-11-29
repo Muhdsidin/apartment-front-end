@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
@@ -10,8 +10,7 @@ import axios from 'axios'
 function Room() {
   const [title, setTitle] = useState("");
   const [prize, setPrize] = useState("");
-  const [cat, setCat] = useState("");
-  const [data , setData] = useState([])
+  const [roomNumber,setRoomNumber]=useState()
  /* const [imageOne, setImageOne] = useState("");
   const [imageTwo, setImageTwo] = useState("");
   const [imageThree, setImageThree] = useState("");*/
@@ -21,93 +20,82 @@ function Room() {
       event.preventDefault();
     const formData = new FormData()
     //formData.append("images", imageOne)
-
+    formData.append("title", title)
+    formData.append("prize", prize)
+    alert('Successfully Uploaded')
     // Add your form submission logic here
 
-    const response = await axios("http://localhost:3000/upload",{
+    const response = await axios("https://apartment-one.vercel.app/upload",{
       method:"POST",
-      data: {
-        title,
-        prize,
-        buildingId : cat
+      data: formData,
+      headers : {
+        "Content-Type":"multipart/form-data"
       },
-     
     })
     console.log(response.data)
     } catch (error) {
       console.log(error)
+      alert(error)
     }
   };
-
-  const getBuilddata = async(req,res)=>{
-   try {
-    const response = await axios("http://localhost:3000/get-building")
-    console.log(response.data)
-    setData(response.data)
-   } catch (error) {
-    console.log(error)
-   }
-  }
-
-useEffect(() => {
-getBuilddata()
-}, [])
-
-console.log(cat)
-
  
 
   return (
-    <Container>
-      <Row className="justify-content-center">
+    <Container style={{marginTop:'7em'}}>
+      <Row className="justify-content-center" >
         <Col xs={12} md={8}>
-          <div className="div">
+          <div className="div" >
             <Form onSubmit={handleSubmit}>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="mb-3" controlId="formBasicTitle">
                 <Form.Label>Enter Title</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Enter Title"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
+                  required
                 />
               </Form.Group>
-
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Prize</Form.Label>
+              <Form.Group className="mb-3" controlId="formBasicRoomNumber">
+                <Form.Label>Room number</Form.Label>
                 <Form.Control
                   type="number"
-                  placeholder="Enter The Prize"
-                  value={prize}
-                  onChange={(e) => setPrize(e.target.value)}
+                  required
+                  placeholder="Enter The Room Number"
+                  value={roomNumber}
+                  onChange={(e) => setRoomNumber(e.target.value)}
                 />
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicCat">
-                <Form.Label>Select Category</Form.Label>
+              <Form.Group className="mb-3" controlId="formBasicPrice">
+                <Form.Label>Price</Form.Label>
                 <Form.Control
-                  as="select"
-                  value={cat}
-                  onChange={(e) => setCat(e.target.value)}
-                >
-                  {data.map((val)=>(
-                    
-                  <option value={val._id}>{val.name}</option>
-                   
-                  ))}
+                  type="number"
+                  required
+                  placeholder="Enter The Prize"
+                  value={prize}
                   
-                </Form.Control>
+                  onChange={(e) => setPrize(e.target.value)}  
+                />
               </Form.Group>
+              <p>Add Room To:-</p>
+              <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Check type="checkbox" label="Building 1"  required />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Check type="checkbox" label="Building 2"  required />
+              </Form.Group>
+
 
             
 
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
+                <Form.Check type="checkbox" label="Check me out"  required />
               </Form.Group>
 
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
+              <button className='btn-sub' type="submit">
+                Upload
+              </button>
             </Form>
           </div>
         </Col>

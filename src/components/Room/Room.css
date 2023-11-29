@@ -3,15 +3,33 @@
     max-width: 400px;
     margin: 30px auto;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #000000;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgb(224, 153, 21);
+    margin-top: 73px;
+    height: 31em;
   }
-  
+  .upload-room{
+    color: rgb(51, 46, 46);
+  }
   /* Responsive Styles */
   @media (max-width: 576px) {
     .div {
       width: 90%;
     }
   }
+  .btn-sub{
+    
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color:rgb(224, 153, 21);
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+   float: right;
+  }
   
+  .btn-sub:hover {
+    background-color:orange;
+    
+  }
