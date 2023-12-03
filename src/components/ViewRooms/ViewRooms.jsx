@@ -1,13 +1,30 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import Row from 'react-bootstrap/Row';
 import './ViewRooms.css'
 import  Container  from 'react-bootstrap/Container';
+import axios from 'axios';
 function ViewRooms() {
+  const [build , setBuild ] = useState([])
+  const getBuilddata = async(req,res)=>{
+      try {
+       const response = await axios("https://apartment-one.vercel.app/get-building")
+       console.log(response.data)
+       setBuild(response.data)
+      } catch (error) {
+       console.log(error)
+      }
+     }
+
+     useEffect(()=>{ 
+      getBuilddata()
+     },[])
   return (
     <div>
       <Container style={{width:'8em',marginTop:'10em'}}>
         <Row>
-        <a href="/building1" data-aos='zoom-in' className='building-1'>Buildind-1</a>
+        {build.map((val)=>( 
+            <a href={`/building/${val._id}`} className="building-1"><li>{val.name}</li></a>
+        ))}
         </Row>
       </Container>
       

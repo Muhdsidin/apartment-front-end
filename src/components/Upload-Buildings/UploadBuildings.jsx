@@ -6,36 +6,37 @@ import Col from 'react-bootstrap/Col';
 import './UploadBuildings.css'
 import { render } from 'https://cdn.skypack.dev/react-dom'
 function UploadBuildings() {
-  const [name, setName] = useState('')
-  const [address, setAddress] = useState('')
-  const [state, setState] = useState('')
-  const [city, setCity] = useState('')
-  const [zip, setZip] = useState()
-  const HandleSubmit = async (e) => {
-    try {
+ 
+  const [name,setName]=useState('')
+  const [address,setAddress]=useState('')
+  const [state,setState]=useState('')
+  const [city,setCity]=useState('')
+  const [zip,setZip]=useState()
+  const HandleSubmit=async(e)=>{
+    try{
       e.preventDefault()
-      const formData = new FormData()
-      formData.append('name', name)
-      formData.append('address', address)
-      formData.append('state', state)
-      formData.append('city', city)
-      formData.append('zip', zip)
-      alert('successfully Uploaded')
+     
 
-      const response = await axios('https://apartment-one.vercel.app/upload-building', {
-        method: 'POST',
-        Data: formData,
+      const response=await axios('https://apartment-one.vercel.app/upload-building',{
+        method:'POST',
+        data:{
+          name,
+          zip,
 
+          state,
+          address,
+          city
+        },
+        
       })
       console.log(response.data);
-    } catch (error) {
+    }catch(error){
       console.log(error);
-      alert(error)
     }
-    
 
 
   }
+
   return (
     <div>
       <Container style={{marginTop:'7em'}}>

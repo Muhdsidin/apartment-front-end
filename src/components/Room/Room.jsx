@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
@@ -8,9 +8,12 @@ import './Room.css';
 import axios from 'axios'
 
 function Room() {
+
+
   const [title, setTitle] = useState("");
   const [prize, setPrize] = useState("");
-  const [roomNumber,setRoomNumber]=useState()
+  const [cat, setCat] = useState("");
+  const [data , setData] = useState([])
  /* const [imageOne, setImageOne] = useState("");
   const [imageTwo, setImageTwo] = useState("");
   const [imageThree, setImageThree] = useState("");*/
@@ -20,24 +23,39 @@ function Room() {
       event.preventDefault();
     const formData = new FormData()
     //formData.append("images", imageOne)
-    formData.append("title", title)
-    formData.append("prize", prize)
-    alert('Successfully Uploaded')
+
     // Add your form submission logic here
 
     const response = await axios("https://apartment-one.vercel.app/upload",{
       method:"POST",
-      data: formData,
-      headers : {
-        "Content-Type":"multipart/form-data"
+      data: {
+        title,
+        prize,
+        buildingId : cat
       },
+     
     })
     console.log(response.data)
     } catch (error) {
       console.log(error)
-      alert(error)
     }
   };
+
+  const getBuilddata = async(req,res)=>{
+   try {
+    const response = await axios("https://apartment-one.vercel.app/get-building")
+    console.log(response.data)
+    setData(response.data)
+   } catch (error) {
+    console.log(error)
+   }
+  }
+
+useEffect(() => {
+getBuilddata()
+}, [])
+
+console.log(cat)
  
 
   return (
@@ -56,16 +74,16 @@ function Room() {
                   required
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicRoomNumber">
+              {/*<Form.Group className="mb-3" controlId="formBasicRoomNumber">
                 <Form.Label>Room number</Form.Label>
                 <Form.Control
                   type="number"
                   required
                   placeholder="Enter The Room Number"
-                  value={roomNumber}
+                
                   onChange={(e) => setRoomNumber(e.target.value)}
                 />
-              </Form.Group>
+  </Form.Group>*/}
 
               <Form.Group className="mb-3" controlId="formBasicPrice">
                 <Form.Label>Price</Form.Label>
@@ -79,11 +97,20 @@ function Room() {
                 />
               </Form.Group>
               <p>Add Room To:-</p>
-              <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Building 1"  required />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Building 2"  required />
+              <Form.Group className="mb-3" controlId="formBasicCat">
+                <Form.Label>Select Category</Form.Label>
+                <Form.Control
+                  as="select"
+                  value={cat}
+                  onChange={(e) => setCat(e.target.value)}
+                >
+                  {data.map((val)=>(
+                    
+                  <option value={val._id}>{val.name}</option>
+                   
+                  ))}
+                  
+                </Form.Control>
               </Form.Group>
 
 
