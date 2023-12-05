@@ -76,17 +76,7 @@ console.log(cat)
                   required
                 />
               </Form.Group>
-              {/*<Form.Group className="mb-3" controlId="formBasicRoomNumber">
-                <Form.Label>Room number</Form.Label>
-                <Form.Control
-                  type="number"
-                  required
-                  placeholder="Enter The Room Number"
-                
-                  onChange={(e) => setRoomNumber(e.target.value)}
-                />
-  </Form.Group>*/}
-
+             
               <Form.Group className="mb-3" controlId="formBasicPrice">
                 <Form.Label>Price</Form.Label>
                 <Form.Control

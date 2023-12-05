@@ -1,0 +1,25 @@
+.BuildingUplodaFormDiv{
+  margin-top: 5em;
+  box-shadow: 0 0 10px rgb(224, 153, 21);
+  border: 1.5px solid #000000;
+  border-radius: 8px;
+  padding-left: 1em;
+  padding-right: 1em; 
+  height: 38em;
+  
+}
+.btn-submit{
+  
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color:rgb(224, 153, 21);
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+ float: right;
+}
+
+.btn-submit:hover {
+  background-color:orange;
+  
+}
