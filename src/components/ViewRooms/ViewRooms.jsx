@@ -20,13 +20,25 @@ function ViewRooms() {
      },[])
   return (
     <div>
-      <Container style={{width:'8em',marginTop:'10em'}}>
-        <Row>
-        {build.map((val)=>( 
-            <a href={`/building/${val._id}`} className="building-1"><li>{val.name}</li></a>
-        ))}
-        </Row>
-      </Container>
+     <Container style={{ width: '8em', marginTop: '10em' }}>
+  <Row>
+    {build.map((val) => (
+      <div className="building-item" data-aos="zoom-in" key={val._id}>
+        <a href={`/building/${val._id}`} className="building-1">
+          
+          <li>{val.name}</li>
+          
+        </a>
+        <a href="" className="delete-building btn btn-danger">
+          Delete
+          </a>
+      </div>
+      
+    ))}
+  </Row>
+  
+</Container>
+
       
     </div>
   )

@@ -46,8 +46,10 @@ function Room() {
     const response = await axios("https://apartment-one.vercel.app/get-building")
     console.log(response.data)
     setData(response.data)
+    alert('Room Added successfully')
    } catch (error) {
     console.log(error)
+    alert(error)
    }
   }
 

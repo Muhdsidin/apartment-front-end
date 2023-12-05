@@ -57,15 +57,16 @@ function Header() {
             </div>
             <div className={`nav-wrap ${isHamburgerActive ? 'is-open' : ''}`}>
               <ul className="nav-list">
-              <li className="none-hid"><a href="/buildings">Upload Buildings</a></li>
+                <li className="none-hid"><a href="/buildings">Upload Buildings</a></li>
                 <li className="none-hid"><a href="/room">Upload Rooms</a></li>
-              <li className="none"><a href="/">Home</a></li>
-                
-              
-               
-                
-               
-                
+                <li className="none-hid"><a href="/viewrooms">View Rooms</a></li>
+                <li className="none"><a href="/">Home</a></li>
+
+
+
+
+
+
                 <li className="with-submenu" onClick={handleSubMenuToggle}>
                   <a href="#">Other</a>
                   {isSubMenuOpen && (
@@ -73,7 +74,7 @@ function Header() {
                       <ul className="submenu-inner">
                         <li><a href="/buildings">Upload Buildings</a></li>
                         <li><a href="/room">Upload Rooms</a></li>
-                        <li><a href="#">View Rooms</a></li>
+                        <li><a href="/viewrooms">View Rooms</a></li>
                       </ul>
                     </div>
                   )}
