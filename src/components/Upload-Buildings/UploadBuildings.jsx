@@ -33,10 +33,7 @@ function UploadBuildings() {
     }catch(error){
       console.log(error);
     }
-
-
   }
-
   return (
     <div>
       <Container style={{marginTop:'7em'}}>

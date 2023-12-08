@@ -23,7 +23,7 @@ function ViewRooms() {
      <Container style={{ width: '8em', marginTop: '10em' }}>
   <Row>
     {build.map((val) => (
-      <div className="building-item" data-aos="zoom-in" key={val._id}>
+      <div className="building-item" data-aos='fade-in'  key={val._id}>
         <a href={`/building/${val._id}`} className="building-1">
           
           <li>{val.name}</li>
@@ -32,6 +32,7 @@ function ViewRooms() {
         <a href="" className="delete-building btn btn-danger">
           Delete
           </a>
+          
       </div>
       
     ))}

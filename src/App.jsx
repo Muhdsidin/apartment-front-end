@@ -7,6 +7,7 @@ import Buildings from "./Pages/AddBuilding";
 import Room from './Pages/AddRooms'
 import Building1View from "./Pages/Building1View";
 import BookRoom from "./Pages/BookRoom";
+import TenentView from "./Pages/TenentView";
 function App() {
   const location = useLocation();
   console.log(location.pathname);
@@ -24,7 +25,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/building/:id" element={<Building1View />} />
         <Route path="/booknow" element={<BookRoom />} />
-
+        <Route path="/ViewTenent" element={<TenentView/>} />
 
 
 

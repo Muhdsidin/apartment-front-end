@@ -23,7 +23,7 @@ function Banner() {
       <a href="/viewrooms" className='box-3'  data-aos='fade-up' style={{ marginTop: '1em',width:'10em' }}>View Rooms</a>
       </Row>
       <Row className="justify-content-center">
-      
+      <a href="/ViewTenent" className='box-3'  data-aos='fade-up' style={{ marginTop: '1em',width:'10em' }}>ViewTenents</a>
       </Row>
       
 

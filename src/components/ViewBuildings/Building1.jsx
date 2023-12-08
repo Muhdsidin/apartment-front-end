@@ -27,15 +27,15 @@ function Building1() {
       <section className="rc" style={{marginLeft:'auto'}}>
         {data.map((val) => (
           
-            <div class="card" data-aos="zoom-in">
-              <div class="card-img"></div>
+            <div class="card" data-aos="zoom-in "data-aos-delay="5">
+             
               <div class="card-info">
                 <p class="text-title">{val.title}</p>
-                <p class="text-body">{val.title}</p>
+                
                 <p class="text-body">Status:not booked yet</p>
               </div>
               <div class="card-footer">
-                <span class="text-title">{val.prize}</span>
+                <span class="text-title">{val.prize}/-AED <p className="per-day"> per day</p></span>
                 <a href="/booknow">
                 <div class="card-button">
                   <svg class="svg-icon" viewBox="0 0 20 20">
