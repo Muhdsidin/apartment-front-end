@@ -24,7 +24,7 @@ function App() {
         <Route path='/viewrooms' element={<RoomsView />} />
         <Route path="/" element={<Home />} />
         <Route path="/building/:id" element={<Building1View />} />
-        <Route path="/booknow" element={<BookRoom />} />
+        <Route path="/booknow/:id" element={<BookRoom />} />
         <Route path="/ViewTenent" element={<TenentView/>} />
 
 
