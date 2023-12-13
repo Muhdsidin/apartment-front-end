@@ -18,7 +18,7 @@ function Booknow() {
    
     try {
       e.preventDefault();
-      const response =await axios("http://localhost:3000/book-now",{
+      const response =await axios("https://apartment-one.vercel.app/book-now",{
         method:"POST",
         data:{
           name,
