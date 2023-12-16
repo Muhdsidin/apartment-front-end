@@ -60,6 +60,7 @@ function Header() {
                 <li className="none-hid"><a href="/buildings">Upload Buildings</a></li>
                 <li className="none-hid"><a href="/room">Upload Rooms</a></li>
                 <li className="none-hid"><a href="/viewrooms">View Rooms</a></li>
+                <li className="none-hid"><a href="/viewtenent">View Tenent</a></li>
                 <li className="none"><a href="/">Home</a></li>
 
 
@@ -75,6 +76,8 @@ function Header() {
                         <li><a href="/buildings">Upload Buildings</a></li>
                         <li><a href="/room">Upload Rooms</a></li>
                         <li><a href="/viewrooms">View Rooms</a></li>
+                        <li><a href="/viewtenent">View Tenent</a></li>
+                      
                       </ul>
                     </div>
                   )}

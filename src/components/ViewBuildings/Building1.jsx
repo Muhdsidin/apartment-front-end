@@ -27,7 +27,7 @@ function Building1() {
       <section className="rc" style={{marginLeft:'auto'}}>
         {data.map((val) => (
           
-            <div class="card" data-aos="zoom-in "data-aos-delay="5">
+            <div class="card" data-aos='zoom-in' >
              
               <div class="card-info">
                 <p class="text-title">{val.title}</p>
@@ -48,7 +48,8 @@ function Building1() {
                 </a>
                
               </div>
-              <a href="/hello" className="delete-room btn btn-danger" style={{ textDecoration: 'none' }}>Delete</a>
+              <a href="#" className="delete-room btn btn-danger" style={{ textDecoration: 'none' }}>Delete</a><br />
+              <a href="#" className="delete-room btn btn-primary" style={{ textDecoration: 'none' }}>Edit</a>
             </div>
           
         ))}
