@@ -2,6 +2,7 @@
     display: inline-block;
 }
 
+
 .table > tbody > tr > .no-line {
     border-top: none;
 }
@@ -18,7 +19,7 @@
     width:100%;
     margin-top: 13em;
     height: 56em;
-    box-shadow: 0 0 10px rgb(224, 153, 21);
+    /* box-shadow: 0 0 10px rgb(224, 153, 21); */
     border: 1.5px solid #000000;
     border-radius: 8px;
 }

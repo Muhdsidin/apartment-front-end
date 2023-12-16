@@ -1,14 +1,32 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
+import React,{useRef} from 'react'
+
 import './Success.css'
-import Row from 'react-bootstrap/Row';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 function Success() {
+  const pdfRef=useRef()
+  const downloadPDF = () => {
+    const input = pdfRef.current;
+    html2canvas(input).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4', true);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      const imgWidth = canvas.width;
+      const imgHeight = canvas.height;
+      const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+      const imgX = (pdfWidth - imgWidth * ratio) / 2;
+      const imgY = 30;
+      pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
+      pdf.save('invoice.pdf');
+    });
+  };
   return (
     <div>
     
     
     <div className="container">
-      <div className="main">
+      <div className="main"  ref={pdfRef}>
       <div className="row">
         <div className="col-xs-12">
           <div className="invoice-title">
@@ -138,7 +156,7 @@ function Success() {
       </div>
     </div>
     <br />
-    <button className='btn-dowload'>Dowload</button>
+    <button className='btn-dowload' onClick={downloadPDF}>Dowload</button>
     <br />
     <br />
       </div>
