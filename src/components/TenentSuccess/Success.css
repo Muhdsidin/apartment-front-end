@@ -1,0 +1,53 @@
+.invoice-title h2, .invoice-title h3 {
+    display: inline-block;
+}
+
+.table > tbody > tr > .no-line {
+    border-top: none;
+}
+
+.table > thead > tr > .no-line {
+    border-bottom: none;
+}
+
+.table > tbody > tr > .thick-line {
+    border-top: 2px solid;
+}
+.main{
+    background-color: #fff;
+    width:100%;
+    margin-top: 13em;
+    height: 56em;
+    box-shadow: 0 0 10px rgb(224, 153, 21);
+    border: 1.5px solid #000000;
+    border-radius: 8px;
+}
+.body{
+    margin-left: 10px
+}
+.order-summary{
+    margin-left: 10px
+}
+.textCenter{
+    display: flex;
+    
+}
+.date{
+    display: flex;
+    justify-content: flex-end;
+
+}
+.btn-dowload{
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color:rgb(224, 153, 21);
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+   float: right;
+}
+.img{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+}

@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import  Container  from 'react-bootstrap/Container';
 import axios from 'axios';
 import './Booknow.css'
-import { useParams } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
 function Booknow() {
   const {id} = useParams()
   const [name , setName] = useState("")
@@ -13,7 +13,7 @@ function Booknow() {
   const [region , setRegion] = useState("")
   const [country , setCountry] = useState("")
   const [state , setState] = useState("")
-
+  const navigate = useNavigate()
   const HandleForm = async(e)=>{
    
     try {
@@ -28,10 +28,14 @@ function Booknow() {
           state,
           RoomId : id
         }
+
       })
       console.log(response.data)
+      alert('Tenent Added suucessfully')
+
     } catch (error) {
       console.log(error)
+      alert(error)
     }
   }
   return (
@@ -45,9 +49,9 @@ function Booknow() {
                   <div class="form-group col-md-6">
                     <label for="inputName">Full Name</label>
                     <input
-                     
                       type="text" class="form-control" id="inputName" placeholder="Name"
                       onChange={(e)=> setName(e.target.value)}
+                      required
                     />
                   </div>
                   <br />
@@ -57,7 +61,7 @@ function Booknow() {
                     placeholder='Room No:000'
                     value={id}
 
-                 
+                    required
                   />
                 </div>
                 <br />
@@ -77,7 +81,7 @@ function Booknow() {
                   <label for="inputAddress">Address</label>
                   <input type="text" class="form-control" id="inputAddress"
                     onChange={(e)=> setAddress(e.target.value)}
-                 
+                    required
                     placeholder="1234 Main St" />
                 </div>
 
@@ -90,12 +94,13 @@ function Booknow() {
                      placeholder='Tenent Region'
                       class="form-control" id="inputCity"
                       onChange={(e)=> setRegion(e.target.value)}
+                      required
                       />
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputCity">Country</label>
                     <input type="Text"
-                     
+                      required
                       class="form-control" id="inputCity"
                       onChange={(e)=> setCountry(e.target.value)}
                       />
@@ -104,6 +109,7 @@ function Booknow() {
                     <label for="inputState">State</label>
                     <input type="text" class="form-control" id="inputState"
                      onChange={(e)=> setState(e.target.value)}
+                     required
                     />
                   </div>
 
