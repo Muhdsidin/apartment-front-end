@@ -18,7 +18,7 @@ function Booknow() {
    
     try {
       e.preventDefault();
-      const response =await axios("https://apartment-one.vercel.app/book-now",{
+      const response =await axios("http://localhost:3000/book-now",{
         method:"POST",
         data:{
           name,
@@ -32,6 +32,7 @@ function Booknow() {
       })
       console.log(response.data)
       alert('Tenent Added suucessfully')
+      navigate(`/success/${response.data._id}`)
 
     } catch (error) {
       console.log(error)

@@ -28,7 +28,7 @@ function App() {
         <Route path="/building/:id" element={<Building1View />} />
         <Route path="/booknow/:id" element={<BookRoom />} />
         <Route path="/ViewTenent" element={<TenentView/>} />
-        <Route path="/success" element={<TenentAddedSuccess/>} />
+        <Route path="/success/:id" element={<TenentAddedSuccess/>} />
 
 
 

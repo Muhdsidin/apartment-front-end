@@ -1,7 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import './ViewTenent.css'
+import axios from 'axios'
 function ViewTenent() {
+  const [data , setData] = useState([])
+  const fetchBooked =async ()=>{
+    const response = await axios("http://localhost:3000/get-all-book")
+    console.log(response.data)
+    setData(response.data)
+  }
+
+  useEffect(()=>{
+    fetchBooked()
+  },[]) 
+
+  const terminateTannent = async(id)=>{
+    const response = await axios("http://localhost:3000/terminate",{
+      method:"POST",
+      data:{
+        BookId : id
+      }
+    })
+    setData(response.data)
+  }
   return (
     <div className='table-main'>
       
@@ -27,14 +48,16 @@ function ViewTenent() {
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-     <td><a href="/" className='btn btn-primary'>Renew</a></td>
-     <td><a href="/" className='btn btn-danger'>Terminate</a></td> 
-    </tr>
+   {data.map((val)=>(
+     <tr>
+     <th scope="row">1</th>
+     <td>{val.name}</td>
+     <td>{val.state}</td>
+     <td>@mdo</td>
+    <td><a href="/" className='btn btn-primary'>Renew</a></td>
+    <td><button className='btn btn-danger' onClick={()=>terminateTannent(val._id)}>Terminate</button></td> 
+   </tr>
+   ))}
    
   </tbody>
 </table>

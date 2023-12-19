@@ -1,10 +1,28 @@
-import React,{useRef} from 'react'
+import React,{useEffect, useRef, useState} from 'react'
 
 import './Success.css'
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { useParams } from 'react-router-dom';
+import axios from "axios"
 function Success() {
-  const pdfRef=useRef()
+  const pdfRef = useRef();
+  const {id} = useParams()
+  const [data, setData] = useState({})
+
+  console.log(id)
+
+  const getData = async ()=>{
+    const response = await axios("http://localhost:3000/get-specific-tannent",{
+      method:"GET",
+      headers:{
+        id:id
+      }
+    })
+    console.log(response.data)
+    setData(response.data)
+  }
+
   const downloadPDF = () => {
     const input = pdfRef.current;
     html2canvas(input).then((canvas) => {
@@ -21,6 +39,10 @@ function Success() {
       pdf.save('invoice.pdf');
     });
   };
+
+  useEffect(()=>{
+    getData()
+  },[])
   return (
     <div>
     
@@ -41,7 +63,7 @@ function Success() {
               <address>
                 <strong>Tenent Name:</strong>
                 <br />
-                Sample
+               {data.name}
                
               </address>
             </div>
@@ -49,7 +71,7 @@ function Success() {
               <address>
                 <strong>Address:</strong>
                 <br />
-                Jane Smith
+                {data.address}
                 <br />
                 1234 Main
                 <br />
@@ -64,7 +86,7 @@ function Success() {
               <address>
                 <strong>Region:</strong>
                 <br />
-                Visa ending **** 4242
+               {data.region}
                 <br />
                 jsmith@email.com
               </address>
@@ -74,7 +96,7 @@ function Success() {
               <address>
                 <strong>Country:</strong>
                 <br />
-                Sample Country
+               {data.country}
                 <br />
                 <br />
               </address>
