@@ -50,7 +50,7 @@ function ViewTenent() {
      <td>{val.country}</td>
      <td>{val.state}</td>
      
-    <td><a href="/" className='btn btn-primary'>Renew</a></td>
+    <td><a href="/edittenent" className='btn btn-primary'>Renew</a></td>
     <td><button className='btn btn-danger' onClick={()=>terminateTannent(val._id)}>Terminate</button></td> 
    </tr>
    ))}
