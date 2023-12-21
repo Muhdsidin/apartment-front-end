@@ -1,46 +1,23 @@
-import React, { useState } from 'react'
+import React,{useState} from 'react'
 import axios from 'axios'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import './UploadBuildings.css'
+function BuildingEdit() {
 
-function UploadBuildings() {
- 
-  const [name,setName]=useState('')
-  const [address,setAddress]=useState('')
-  const [state,setState]=useState('')
-  const [city,setCity]=useState('')
-  const [zip,setZip]=useState()
-  const HandleSubmit=async(e)=>{
-    try{
-      e.preventDefault()
-     
-
-      const response=await axios('https://apartment-one.vercel.app/upload-building',{
-        method:'POST',
-        data:{
-          name,
-          zip,
-
-          state,
-          address,
-          city
-        },
-        
-      })
-      console.log(response.data);
-    }catch(error){
-      console.log(error);
-    }
-  }
+    const [name,setName]=useState('')
+    const [address,setAddress]=useState('')
+    const [state,setState]=useState('')
+    const [city,setCity]=useState('')
+    const [zip,setZip]=useState()
   return (
-    <div>
+    
+      <div>
       <Container style={{marginTop:'7em'}}>
         <Row className="justify-content-center">
           <Col xs={12} md={8}>
             <div className="BuildingUplodaFormDiv">
-              <form onSubmit={HandleSubmit}>
+              <form >
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputName">Name</label>
@@ -116,4 +93,5 @@ function UploadBuildings() {
   )
 }
 
-export default UploadBuildings
+export default BuildingEdit
+

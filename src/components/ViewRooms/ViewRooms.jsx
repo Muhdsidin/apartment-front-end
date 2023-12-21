@@ -32,7 +32,7 @@ function ViewRooms() {
         <a href="" className="delete-building btn btn-danger">
           Delete:
           </a>
-          <a href="" className="delete-building btn btn-primary">
+          <a href="/buildingedit" className="delete-building btn btn-primary">
           Edit:
           </a>
           

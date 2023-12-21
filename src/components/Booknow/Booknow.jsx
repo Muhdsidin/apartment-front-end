@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
@@ -10,9 +10,10 @@ function Booknow() {
   const {id} = useParams()
   const [name , setName] = useState("")
   const [address , setAddress] = useState("")
-  const [region , setRegion] = useState("")
   const [country , setCountry] = useState("")
   const [state , setState] = useState("")
+  const [from,setFrom]=useState()
+  const [to,setTo]=useState()
   const navigate = useNavigate()
   const HandleForm = async(e)=>{
    
@@ -23,7 +24,9 @@ function Booknow() {
         data:{
           name,
           address,
-          region,
+          to,
+          from,
+
           country,
           state,
           RoomId : id
@@ -89,15 +92,7 @@ function Booknow() {
 
 
                 <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="inputCity">Region</label>
-                    <input type="Text"
-                     placeholder='Tenent Region'
-                      class="form-control" id="inputCity"
-                      onChange={(e)=> setRegion(e.target.value)}
-                      required
-                      />
-                  </div>
+                
                   <div class="form-group col-md-6">
                     <label for="inputCity">Country</label>
                     <input type="Text"
@@ -113,6 +108,26 @@ function Booknow() {
                      required
                     />
                   </div>
+                  <br />
+                  <div class="form-group">
+                
+                  <input type="text" class="form-control" id="inputRoom"
+                  
+                    value={from}
+onChange={(e)=>setFrom(e.target.value)}
+                    required
+                  />
+                </div> <br />
+                  <div class="form-group">
+                
+                  <input type="text" class="form-control" id="inputRoom"
+                    placeholder='Room No:000'
+                    value={to}
+                    onChange={(e)=>setTo(e.target.value)}
+
+                    required
+                  />
+                </div>
 
                  
                 </div>
