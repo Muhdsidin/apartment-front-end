@@ -13,7 +13,7 @@ function Success() {
   console.log(id)
 
   const getData = async ()=>{
-    const response = await axios("http://localhost:3000/get-specific-tannent",{
+    const response = await axios("https://apartment-one.vercel.app/get-specific-tannent",{
       method:"GET",
       headers:{
         id:id
