@@ -3,16 +3,17 @@ import axios from 'axios'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import './BuildingEdit.css'
 function BuildingEdit() {
+
     const [name,setName]=useState('')
-  const [address,setAddress]=useState('')
-  const [state,setState]=useState('')
-  const [city,setCity]=useState('')
-  const [zip,setZip]=useState()
+    const [address,setAddress]=useState('')
+    const [state,setState]=useState('')
+    const [city,setCity]=useState('')
+    const [zip,setZip]=useState()
   return (
-    <div>
-       <Container style={{marginTop:'7em'}}>
+    
+      <div>
+      <Container style={{marginTop:'7em'}}>
         <Row className="justify-content-center">
           <Col xs={12} md={8}>
             <div className="BuildingUplodaFormDiv">
@@ -93,3 +94,4 @@ function BuildingEdit() {
 }
 
 export default BuildingEdit
+
