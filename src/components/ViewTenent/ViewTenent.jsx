@@ -5,7 +5,7 @@ import axios from 'axios'
 function ViewTenent() {
   const [data , setData] = useState([])
   const fetchBooked =async ()=>{
-    const response = await axios("http://localhost:3000/get-all-book")
+    const response = await axios("https://apartment-one.vercel.app/get-all-book")
     console.log(response.data)
     setData(response.data)
   }
@@ -15,7 +15,7 @@ function ViewTenent() {
   },[]) 
 
   const terminateTannent = async(id)=>{
-    const response = await axios("http://localhost:3000/terminate",{
+    const response = await axios("https://apartment-one.vercel.app/terminate",{
       method:"POST",
       data:{
         BookId : id
