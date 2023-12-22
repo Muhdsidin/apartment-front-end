@@ -21,6 +21,17 @@ function Building1() {
   useEffect(() => {
     getRoom();
   }, []);
+
+  const editRoom = async (roomId)=>{
+    const response = await axios("http://localhost:3000/delete-room",{
+      method:"POST",
+      data:{
+      roomId
+      }
+    })
+    location.reload()
+
+  }
   console.log(data);
   return (
     <div>
@@ -48,8 +59,8 @@ function Building1() {
                 </a>
                
               </div>
-              <a href="#" className="delete-room btn btn-danger" style={{ textDecoration: 'none' }}>Delete</a><br />
-              <a href="#" className="delete-room btn btn-primary" style={{ textDecoration: 'none' }}>Edit</a>
+              <button className="delete-room btn btn-danger" onClick={()=> editRoom(val._id)} style={{ textDecoration: 'none' }}>Delete</button><br />
+              <a href={`/roomedit/${val._id}`} className="delete-room btn btn-primary" style={{ textDecoration: 'none' }}>Edit</a>
             </div>
           
         ))}
