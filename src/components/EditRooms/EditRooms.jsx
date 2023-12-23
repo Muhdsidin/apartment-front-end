@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect } from "react";
 function EditRooms() {
@@ -13,6 +13,7 @@ function EditRooms() {
   const [title, setTitle] = useState("");
   const [prize, setPrize] = useState("");
   const [cat, setCat] = useState("");
+  const navigate = useNavigate()
 
   const [data , setData] = useState({})
 
@@ -32,6 +33,19 @@ function EditRooms() {
   useEffect(()=>{
     getDetails()
   },[])
+
+  const UpdateRoom = async()=>{
+    const response = await axios("https://apartment-one.vercel.app/update-room",{
+      method:"POST",
+      data:{
+        title,
+        prize,
+        id
+      }
+    })
+    console.log(response.data)
+    navigate(-1)
+  }
 
   
  
@@ -73,7 +87,7 @@ function EditRooms() {
                 <Form.Check type="checkbox" label="Check me out"  required />
               </Form.Group>
 
-              <button className='btn-sub' type="submit">
+              <button className='btn-sub' type="submit" onClick={UpdateRoom}>
                 Upload
               </button>
             </Form>
