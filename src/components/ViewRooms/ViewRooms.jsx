@@ -24,15 +24,15 @@ function ViewRooms() {
   <Row>
     {build.map((val) => (
       <div className="building-item" key={val._id}>
-        <a href={`/building/${val._id}`} className="building-1">
+        <a href={`/building/${val._id}`} className="building-1" data-aos='zoom-in'>
           
           <li>{val.name}</li>
           
         </a>
-        <a href="" className="delete-building btn btn-danger">
+        <a href="" className="delete-building btn btn-danger" data-aos='zoom-in'>
           Delete:
           </a>
-          <a href="/buildingedit" className="delete-building btn btn-primary">
+          <a href="/buildingedit" className="delete-building btn btn-primary" data-aos='zoom-in'>
           Edit:
           </a>
           
