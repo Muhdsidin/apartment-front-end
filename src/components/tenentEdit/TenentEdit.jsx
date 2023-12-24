@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import './TenentEdit.css'
 import Row from 'react-bootstrap/Row';
-import Form from 'react-bootstrap/Form';
+
 import Col from 'react-bootstrap/Col';
 import  Container  from 'react-bootstrap/Container';
 import axios from 'axios';

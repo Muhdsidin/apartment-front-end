@@ -36,6 +36,9 @@ function ViewTenent() {
       <th scope="col">Address</th>
       <th scope="col">country</th>
       <th scope="col">state</th>
+      <th scope="col">From</th>
+      <th scope="col">To</th>
+      <th scope="col">Total</th>
       <th scope="col">Option1</th>
       <th scope="col">Option2</th>
     </tr>
@@ -45,10 +48,13 @@ function ViewTenent() {
      <tr>
      <th scope="row">1</th>
      <td>{val.name}</td>
-     <td>{val.state}</td>
      <td>{val.address}</td>
      <td>{val.country}</td>
      <td>{val.state}</td>
+     
+     <td>{val.from}</td>
+     <td>{val.to}</td>
+     <td>{val.total}</td>
      
     <td><a href="/edittenent" className='btn btn-primary'>Renew</a></td>
     <td><button className='btn btn-danger' onClick={()=>terminateTannent(val._id)}>Terminate</button></td> 

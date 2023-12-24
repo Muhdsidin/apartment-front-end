@@ -1,5 +1,4 @@
 import React, { useState , useEffect } from 'react';
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -17,7 +16,9 @@ function Room() {
  /* const [imageOne, setImageOne] = useState("");
   const [imageTwo, setImageTwo] = useState("");
   const [imageThree, setImageThree] = useState("");*/
-
+const handleUpload=()=>{
+  alert('Room Added')
+}
   const handleSubmit = async(event) => {
     try {
       event.preventDefault();
@@ -46,8 +47,10 @@ function Room() {
     const response = await axios("https://apartment-one.vercel.app/get-building")
     console.log(response.data)
     setData(response.data)
-    alert('Room Added successfully')
-   } catch (error) {
+    
+   }
+   
+    catch (error) {
     console.log(error)
     alert(error)
    }
@@ -67,10 +70,10 @@ console.log(cat)
           <div className="div" >
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicTitle">
-                <Form.Label>Enter Title</Form.Label>
+                <Form.Label>Enter Room NO:</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Enter Title"
+                  placeholder="123"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   required
@@ -112,7 +115,7 @@ console.log(cat)
                 <Form.Check type="checkbox" label="Check me out"  required />
               </Form.Group>
 
-              <button className='btn-sub' type="submit">
+              <button className='btn-sub' type="submit" onClick={handleUpload}>
                 Upload
               </button>
             </Form>

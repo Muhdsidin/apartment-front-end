@@ -9,9 +9,28 @@ function Success() {
   const pdfRef = useRef();
   const {id} = useParams()
   const [data, setData] = useState({})
-
+  const [currentDate, setCurrentDate] = useState('');
   console.log(id)
+  useEffect(() => {
+   
+    const getCurrentDate = () => {
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const today = new Date();
+      const formattedDate = today.toLocaleDateString(undefined, options);
+      setCurrentDate(formattedDate);
+    };
 
+
+    getCurrentDate();
+
+   
+    const intervalId = setInterval(() => {
+      getCurrentDate();
+    }, 1000 * 60 * 60 * 24);
+
+   
+    return () => clearInterval(intervalId);
+  }, []);
   const getData = async ()=>{
     const response = await axios("https://apartment-one.vercel.app/get-specific-tannent",{
       method:"GET",
@@ -54,8 +73,8 @@ function Success() {
           <div className="invoice-title">
             <h2 className='textCenter' style={{display:'flex',justifyContent:'center'}}>invoice</h2>
             <div className="body">
-            <h3 className="pull-right">TenentId:12345</h3>
-            <h3 className="date" style={{display:'flex',justifyContent:'flex-end',fontSize:'17px'}}>Date:12345</h3>
+            <h3 className="pull-right">TenentId:{data.id}</h3>
+            <h3 className="date" style={{display:'flex',justifyContent:'flex-end',fontSize:'17px'}}>Date:{currentDate}</h3>
           
           <hr />
           <div className="row">
@@ -73,22 +92,19 @@ function Success() {
                 <br />
                 {data.address}
                 <br />
-                1234 Main
-                <br />
-                Apt. 4B
-                <br />
-                Springfield, ST 54321
+               
+                
               </address>
             </div>
           </div>
           <div className="row">
             <div className="col-xs-6">
               <address>
-                <strong>Region:</strong>
+                <strong>Region:{data.region}</strong>
                 <br />
-               {data.region}
-                <br />
-                jsmith@email.com
+               
+                
+              
               </address>
             </div>
             <div className="col-xs-6 text-right">
@@ -158,11 +174,11 @@ function Success() {
                       
                     </tr>
                     <tr>
-                      <td>5555</td>
-                      <td className="text-center">sample</td>
-                      <td className="text-center">23-11-23</td>
-                      <td className="text-center">18-11-24</td>
-                      <td className="text-center">100/-AED</td>
+                      <td>{data.room}</td>
+                      <td className="text-center"></td>
+                      <td className="text-center">{data.from}</td>
+                      <td className="text-center">{data.to}</td>
+                      <td className="text-center">{data.price}</td>
                       <td className="text-right">1000/-AED</td>
                     </tr>
                     
