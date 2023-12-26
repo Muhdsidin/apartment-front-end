@@ -3,7 +3,7 @@
     display: inline-block;
     padding: 10px 20px;
     text-decoration: none;
-    background-color: rgb(224, 153, 21);
+    background-color:rgb(64, 134, 226);
     color: #fff;
     border-radius: 5px;
     transition: background-color 0.3s ease-in-out;
@@ -12,18 +12,15 @@
     margin: 10px; 
   }
 .building-1:hover{
-    background-color: orange;
+  background-color:rgb(71, 121, 187);
 }
 
 .delete-building{
- 
   padding: 10px 20px;
   text-decoration: none;
- 
   color: #fff;
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
- 
   width: 8em;
   margin: 10px; 
 }
