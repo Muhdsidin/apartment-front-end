@@ -24,3 +24,29 @@
   width: 8em;
   margin: 10px; 
 }
+.room-items {
+  height: max-content;
+  width: 89em;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgb(74, 110, 209);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 21vh;
+    border-radius: 10px;
+}
+@media only screen and (max-width: 800px){
+  .room-items{
+    width: 23em;
+  }
+}
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: -8em;
+}

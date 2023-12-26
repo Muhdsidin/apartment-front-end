@@ -19,11 +19,13 @@ function ViewRooms() {
       getBuilddata()
      },[])
   return (
-    <div className="building-item">
+    <div className="">
+<div className="building-item room-items">
      <Container style={{ width: '8em', marginTop: '10em' }}>
+  
   <Row>
     {build.map((val) => (
-      <div  key={val._id}>
+      <div  key={val._id} className="center-container">
         <a href={`/building/${val._id}`} className="building-1" data-aos='zoom-in'>
           
           <li>{val.name}</li>
@@ -43,8 +45,13 @@ function ViewRooms() {
   
 </Container>
 
-      
+
     </div>
+    <br />
+    <br />
+    </div>
+    
+   
   )
 }
 
