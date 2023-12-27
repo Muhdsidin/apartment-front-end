@@ -56,7 +56,7 @@ function ViewTenent() {
      <td>{val.to}</td>
      <td>{val.total}</td>
      
-    <td><a href="/edittenent" className='btn btn-primary'>Renew</a></td>
+    <td><a href={`/edittenent/${val._id}`} className='btn btn-primary'>Renew</a></td>
     <td><button className='btn btn-danger' onClick={()=>terminateTannent(val._id)}>Terminate</button></td> 
    </tr>
    ))}

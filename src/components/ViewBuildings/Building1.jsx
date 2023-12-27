@@ -23,7 +23,7 @@ function Building1() {
   }, []);
 
   const editRoom = async (roomId)=>{
-    const response = await axios("http://localhost:3000/delete-room",{
+    const response = await axios("https://apartment-one.vercel.app/delete-room",{
       method:"POST",
       data:{
       roomId

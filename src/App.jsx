@@ -31,7 +31,7 @@ function App() {
         <Route path="/booknow/:id" element={<BookRoom />} />
         <Route path="/ViewTenent" element={<TenentView/>} />
         <Route path="/success/:id" element={<TenentAddedSuccess/>} />
-        <Route path="/edittenent" element={<EditTenent/>} />
+        <Route path="/edittenent/:id" element={<EditTenent/>} />
         <Route path="/buildingedit" element={<EditBuilding/>} />
         <Route path="/roomedit/:id" element={<RoomsEdit/>} />
 
