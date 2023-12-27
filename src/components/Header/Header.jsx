@@ -53,7 +53,7 @@ function Header() {
         <div className="container">
           <div className="row-wrap">
             <div className="logo-wrap">
-              <span className="logo" data-aos='zoom-in'>LOGO</span>
+              <span className="logo" data-aos='fade-up'>LOGO</span>
             </div>
             <div className={`nav-wrap ${isHamburgerActive ? 'is-open' : ''}`}>
               <ul className="nav-list">
