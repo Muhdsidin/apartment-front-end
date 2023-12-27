@@ -1,4 +1,4 @@
-import React,{useEffect, useRef, useState} from 'react'
+import React,{useEffect, useMemo, useRef, useState} from 'react'
 
 import './Success.css'
 import html2canvas from 'html2canvas';
@@ -9,6 +9,7 @@ function Success() {
   const pdfRef = useRef();
   const {id} = useParams()
   const [data, setData] = useState({})
+  const [room , setRoom] = useState({})
   const [currentDate, setCurrentDate] = useState('');
   console.log(id)
   useEffect(() => {
@@ -31,6 +32,9 @@ function Success() {
    
     return () => clearInterval(intervalId);
   }, []);
+
+
+
   const getData = async ()=>{
     const response = await axios("https://apartment-one.vercel.app/get-specific-tannent",{
       method:"GET",
@@ -41,6 +45,23 @@ function Success() {
     console.log(response.data)
     setData(response.data)
   }
+
+
+
+  const getDetails =async()=>{
+    const response = await axios("https://apartment-one.vercel.app/get-active-room",{
+      method:"GET",
+      headers:{
+        roomid: data.roomNo
+      }
+    })
+    console.log(response.data)
+    setRoom(response.data)
+   
+  }
+
+
+
 
   const downloadPDF = () => {
     const input = pdfRef.current;
@@ -59,9 +80,17 @@ function Success() {
     });
   };
 
-  useEffect(()=>{
-    getData()
+
+
+  useEffect(async()=>{
+   getData()
+   
   },[])
+  useMemo(()=>{
+    getDetails()
+  },[data])
+
+  console.log(room)
   return (
     <div>
     
@@ -174,11 +203,11 @@ function Success() {
                       
                     </tr>
                     <tr>
-                      <td>{data.room}</td>
+                      <td>{data.roomNo}</td>
                       <td className="text-center"></td>
                       <td className="text-center">{data.from}</td>
                       <td className="text-center">{data.to}</td>
-                      <td className="text-center">{data.price}</td>
+                      <td className="text-center">{room.prize}</td>
                       <td className="text-right">1000/-AED</td>
                     </tr>
                     

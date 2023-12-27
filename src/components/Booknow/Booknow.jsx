@@ -15,9 +15,11 @@ function Booknow() {
   const [region, setRegion] = useState('')
   const [from, setFrom] = useState()
   const [to, setTo] = useState()
-  const [room,setRoom]=useState('')
-  const [price,setPrice]=useState()
+
+  
   const navigate = useNavigate()
+
+  console.log(to , from)
   const HandleForm = async (e) => {
 
     try {
@@ -29,10 +31,10 @@ function Booknow() {
           address,
           to,
           from,
-          room,
+          region,
           country,
           state,
-          price,
+         
           RoomId: id
         }
 
@@ -122,7 +124,7 @@ function Booknow() {
                     />
                   </div>
 
-                  <div class="form-group">
+                  {/*<div class="form-group">
                     <label for="inputState">Room</label>
                     <input type="text" class="form-control" id="inputRoom"
                       placeholder='Room No:000'
@@ -131,7 +133,7 @@ function Booknow() {
 
                       required
                     />
-                  </div>
+  </div>  // we will develop latter its self*/}
                   
                   <div class="form-group">
                     <label for="inputState">From</label>
@@ -153,17 +155,7 @@ function Booknow() {
                       required
                     />
                   </div>
-                  <div class="form-group">
-                    <label for="inputState">Price</label>
-                    <input type="text" class="form-control" id="inputRoom"
-                      placeholder='500/-AED'
-                      value={price}
-                      disabled
-                      onChange={(e) => setPrice(e.target.value)}
-
-                      required
-                    />
-                  </div>
+                 
 
 
 

@@ -7,6 +7,7 @@ import  Container  from 'react-bootstrap/Container';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 function TenentEdit() {
+  const navigate = useNavigate()
   const {id } = useParams()
     const [name,setName]=useState('')
   const [address,setAddress]=useState('')
@@ -17,7 +18,7 @@ function TenentEdit() {
   const [data , setData] = useState({})
 
   const getPecieficTannente = async()=>{
-    const response = await axios("http://localhost:3000/get-specific-tannent",{
+    const response = await axios("https://apartment-one.vercel.app/get-specific-tannent",{
       method:"GET",
       headers:{
          id
@@ -31,8 +32,9 @@ function TenentEdit() {
    getPecieficTannente()
   },[])
 
-  const edittenent =async()=>{
-    const response = await axios("http://localhost:3000/update-tannent",{
+  const edittenent =async(e)=>{
+    e.preventDefault()
+    const response = await axios("https://apartment-one.vercel.app/update-tannent",{
       method:"POST",
       data:{
         name,
@@ -41,6 +43,8 @@ function TenentEdit() {
         TannentId:id
       }
     })
+    console.log(response.data)
+    navigate("/ViewTenent")
   }
   
   return (
@@ -50,7 +54,7 @@ function TenentEdit() {
         <Row className="justify-content-center">
           <Col xs={12} md={8}>
             <div className="BuildingUplodaFormDiv">
-              <form >
+              <form onSubmit={edittenent}>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputName">Name</label>
@@ -105,7 +109,7 @@ function TenentEdit() {
              
                 <br />
 
-                <button type="submit" required class="btn-submit">Edit</button>
+                <button type="submit" required class="btn-submit" >Edit</button>
               
               </form>
             </div>
