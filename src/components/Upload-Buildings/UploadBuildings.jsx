@@ -4,9 +4,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './UploadBuildings.css'
-
+import {useNavigate} from 'react-router-dom'
 function UploadBuildings() {
- 
+ const navigate=useNavigate()
   const [name,setName]=useState('')
   const [address,setAddress]=useState('')
   const [state,setState]=useState('')
@@ -30,6 +30,8 @@ function UploadBuildings() {
         
       })
       console.log(response.data);
+      alert('Building Added')
+navigate('/viewrooms')
     }catch(error){
       console.log(error);
     }
