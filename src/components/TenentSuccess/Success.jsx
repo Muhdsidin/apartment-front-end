@@ -12,6 +12,13 @@ function Success() {
   const [room , setRoom] = useState({})
   const [currentDate, setCurrentDate] = useState('');
   console.log(id)
+  var date1 = new Date(data.from);
+  var date2 = new Date(data.to);
+  var diffDays = date2.getDate() - date1.getDate(); 
+  const Total = diffDays  * room.prize
+
+  console.log()
+ 
   useEffect(() => {
    
     const getCurrentDate = () => {
@@ -208,7 +215,7 @@ function Success() {
                       <td className="text-center">{data.from}</td>
                       <td className="text-center">{data.to}</td>
                       <td className="text-center">{room.prize}</td>
-                      <td className="text-right">1000/-AED</td>
+                      <td className="text-right">{Total}</td>
                     </tr>
                     
                     

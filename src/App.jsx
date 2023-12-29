@@ -32,7 +32,7 @@ function App() {
         <Route path="/ViewTenent" element={<TenentView/>} />
         <Route path="/success/:id" element={<TenentAddedSuccess/>} />
         <Route path="/edittenent/:id" element={<EditTenent/>} />
-        <Route path="/buildingedit" element={<EditBuilding/>} />
+        <Route path="/buildingedit/:id" element={<EditBuilding/>} />
         <Route path="/roomedit/:id" element={<RoomsEdit/>} />
 
 

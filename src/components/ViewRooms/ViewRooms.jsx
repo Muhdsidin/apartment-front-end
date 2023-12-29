@@ -15,6 +15,17 @@ function ViewRooms() {
       }
      }
 
+  const DeleteBuilding = async (id)=>{
+    console.log(id)
+    const response = await axios("http://localhost:3000/delete-building",{
+      method:"POST",
+      data:{
+        BuildId : id
+      }
+    })
+    setBuild(response.data)
+  }
+
      useEffect(()=>{ 
       getBuilddata()
      },[])
@@ -31,10 +42,10 @@ function ViewRooms() {
           <li>{val.name}</li>
           
         </a>
-        <a href="" className="delete-building btn btn-danger" data-aos='zoom-in'>
+        <button className="delete-building btn btn-danger" data-aos='zoom-in' onClick={()=> DeleteBuilding(val._id)}>
           Delete:{val.name}
-          </a>
-          <a href="/buildingedit" className="delete-building btn btn-primary" data-aos='zoom-in'>
+          </button>
+          <a href={`/buildingedit/${val._id}`} className="delete-building btn btn-primary" data-aos='zoom-in'>
           Edit:{val.name}
           </a>
           

@@ -43,7 +43,7 @@ function Building1() {
               <div class="card-info">
                 <p class="text-title">{val.title}</p>
                 
-                <p class="text-body">Status:not booked yet</p>
+                <p class="text-body">{val.book ? "Already Booked": "Not Booked "}</p>
               </div>
               <div class="card-footer">
                 <span class="text-title">{val.prize}/-AED <p className="per-day"> per day</p></span>
