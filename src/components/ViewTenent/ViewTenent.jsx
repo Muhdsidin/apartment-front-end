@@ -28,7 +28,7 @@ function ViewTenent() {
   }
 
   const search = async()=>{
-    const response = await axios(`http://localhost:3000/${input}`)
+    const response = await axios(`https://apartment-one.vercel.app/${input}`)
     console.log(response.data)
     setSearchData(response.data)
     setInput("")
