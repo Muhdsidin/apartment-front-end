@@ -17,7 +17,7 @@ function ViewRooms() {
 
   const DeleteBuilding = async (id)=>{
     console.log(id)
-    const response = await axios("http://localhost:3000/delete-building",{
+    const response = await axios("https://apartment-one.vercel.app/delete-building",{
       method:"POST",
       data:{
         BuildId : id

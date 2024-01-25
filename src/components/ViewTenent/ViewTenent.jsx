@@ -18,7 +18,7 @@ function ViewTenent() {
   },[]) 
 
   const terminateTannent = async(id)=>{
-    const response = await axios("https://apartment-one.vercel.app/terminate",{
+    const response = await axios("https://apartment-one.vercel.app",{
       method:"POST",
       data:{
         BookId : id

@@ -16,7 +16,7 @@ function BuildingEdit() {
     const [data ,setData] = useState({})
 
     const GetBuild = async ()=>{
-      const response =await axios("http://localhost:3000/get-building-one",{
+      const response =await axios("https://apartment-one.vercel.app/get-building-one",{
         method:"GET",
         headers:{
           id
@@ -31,7 +31,7 @@ function BuildingEdit() {
 
     const Update = async(e)=>{
       e.preventDefault()
-      const response  = await axios("http://localhost:3000/update-building",{
+      const response  = await axios("https://apartment-one.vercel.app/update-building",{
         method:"POST",
         data:{
           name,
