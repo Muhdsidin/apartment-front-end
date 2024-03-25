@@ -45,6 +45,7 @@ function TenentEdit() {
     })
     console.log(response.data)
     navigate("/ViewTenent")
+    alert('Edited')
   }
   
   return (
@@ -109,7 +110,7 @@ function TenentEdit() {
              
                 <br />
 
-                <button type="submit" required class="btn-submit" >Edit</button>
+                <button type="submit" required class="btn-submit">Edit</button>
               
               </form>
             </div>
