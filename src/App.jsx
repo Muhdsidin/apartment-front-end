@@ -12,6 +12,7 @@ import TenentAddedSuccess from "./Pages/TenentAddedSuccess";
 import EditTenent from "./Pages/EditTenent";
 import EditBuilding from "./Pages/EditBuilding";
 import RoomsEdit from "./Pages/RoomsEdit";
+import TenentRenew from "./Pages/TenentRenew";
 function App() {
   const location = useLocation();
   console.log(location.pathname);
@@ -34,6 +35,7 @@ function App() {
         <Route path="/edittenent/:id" element={<EditTenent/>} />
         <Route path="/buildingedit/:id" element={<EditBuilding/>} />
         <Route path="/roomedit/:id" element={<RoomsEdit/>} />
+        <Route path="/renewtenent" element={<TenentRenew/>}/>
 
 
 

@@ -15,7 +15,7 @@ function Banner() {
    
   />
   <h3 className='title' data-aos="zoom-right">
-    Book Your Apartment Now!!
+    Add Your Your Tenent Now!!
   </h3>
 </div >
 
@@ -62,6 +62,17 @@ function Banner() {
         style={{ marginTop: '1em', width: '10em' }}
       >
         ViewTenents
+      </a>
+    </Row>
+    <Row className="justify-content-center">
+      <a
+        href="/renewtenent"
+        className="box-3"
+        data-aos="fade-up"
+        data-aos-duration="3000"
+        style={{ marginTop: '1em', width: '10em' }}
+      >
+        Renewed Tenents
       </a>
     </Row>
     <br />
