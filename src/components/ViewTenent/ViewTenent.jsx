@@ -6,6 +6,8 @@ function ViewTenent() {
   const [data, setData] = useState([]);
   const [input, setInput] = useState("");
   const [searchdata, setSearchData] = useState();
+ var total = data.from - data.to
+ console.log(total)
 
   const fetchBooked = async () => {
     const response = await axios(
@@ -17,6 +19,7 @@ function ViewTenent() {
 
   useEffect(() => {
     fetchBooked();
+    
   }, []);
 
   const terminateTannent = async (id) => {
@@ -105,7 +108,7 @@ function ViewTenent() {
                       <td>{val.state}</td>
                       <td>{val.from}</td>
                       <td>{val.to}</td>
-                      <td>{val.total}</td>
+                      <td>{total}</td>
                     </strike>
                   ) : (
                     <>
