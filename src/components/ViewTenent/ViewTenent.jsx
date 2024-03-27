@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import "./ViewTenent.css";
 import axios from "axios";
+
+
+
 function ViewTenent() {
   const [data, setData] = useState([]);
   const [input, setInput] = useState("");
@@ -43,12 +46,16 @@ function ViewTenent() {
   return (
     <div className="table-main">
       <Container style={{ marginTop: "11em" }}>
-        <input type="text" onChange={(e) => setInput(e.target.value)} />
+        {/* <input type="text" onChange={(e) => setInput(e.target.value)} />
         <button onClick={search} value={input}>
           {" "}
           Search
-        </button>
-
+        </button> */}
+        <form class="d-flex sr">
+        <input class="form-control me-2" onChange={(e) => setInput(e.target.value)}  type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-primary" type="submit" onClick={search} value={input}>
+          {" "}Search</button>
+      </form>
         <table className="table">
           <thead>
             <tr>
@@ -127,20 +134,18 @@ function ViewTenent() {
                   <td>{val.total}</td>
 
                   <td>
-                    <a
-                      href={`/edittenent/${val._id}`}
-                      className="btn btn-primary"
-                    >
-                      Renew
-                    </a>
+                   
+                    <a href={`/edittenent/${val._id}`}><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m5 16l-1 4l4-1L19.586 7.414a2 2 0 0 0 0-2.828l-.172-.172a2 2 0 0 0-2.828 0zM15 6l3 3m-5 11h8"/></svg></a>
                   </td>
                   <td>
-                    <button
+                    {/* <button
                       className="btn btn-danger"
                       onClick={() => terminateTannent(val._id)}
                     >
                       Terminate
-                    </button>
+                    </button> */}
+       <svg onClick={()=> terminateTannent(val._id)} className="ter" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6z"/></svg>
+
                   </td>
                   </>
                 )}
