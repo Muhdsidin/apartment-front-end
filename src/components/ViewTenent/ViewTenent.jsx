@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import "./ViewTenent.css";
 import axios from "axios";
-import { MDBInput, MDBCol } from "mdbreact";
+
 
 
 function ViewTenent() {

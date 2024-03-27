@@ -74,6 +74,17 @@ function Banner() {
       >
         Renewed Tenents
       </a>
+      </Row>
+      <Row>
+      <a
+        href="/terminated"
+        className="box-3"
+        data-aos="fade-up"
+        data-aos-duration="3000"
+        style={{ marginTop: '1em', width: '10em' }}
+      >
+        Terminates
+      </a>
     </Row>
     <br />
     <br />
