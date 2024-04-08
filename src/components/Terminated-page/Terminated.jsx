@@ -1,17 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Table from 'react-bootstrap/Table';
 import axios from "axios";
 function Terminated() {
 const [data,setData]=useState([])
-    const terminateTannent = async (id) => {
-        const response = await axios("https://apartment-one.vercel.app/terminate", {
+    const terminateTannent = async () => {
+        const response = await axios("http://localhost:3000/get-delete", {
           method: "POST",
-          data: {
-            BookId: id,
-          },
         });
         setData(response.data);
       };
+      console.log(data)
+
+      useEffect(()=>{
+        terminateTannent()
+      },[])
     
   return (
     <div>

@@ -26,13 +26,13 @@ function ViewTenent() {
   }, []);
 
   const terminateTannent = async (id) => {
-    const response = await axios("https://apartment-one.vercel.app/terminate", {
+    const response = await axios("http://localhost:3000/delete-tanennt", {
       method: "POST",
       data: {
-        BookId: id,
+         id,
       },
     });
-    setData(response.data);
+    
   };
 
   const search = async () => {
