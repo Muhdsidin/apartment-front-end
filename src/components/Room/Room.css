@@ -34,3 +34,19 @@
     background-color:rgb(38, 92, 190);
     
   }
+  .btn-add{
+    
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color:rgb(64, 134, 226);
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+   float: left;
+   margin-top: -21px;
+  }
+  
+  .btn-add:hover {
+    background-color:rgb(38, 92, 190);
+    
+  }

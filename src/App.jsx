@@ -14,6 +14,7 @@ import EditBuilding from "./Pages/EditBuilding";
 import RoomsEdit from "./Pages/RoomsEdit";
 import TenentRenew from "./Pages/TenentRenew";
 import TenentTermminated from "./Pages/TenentTermminated";
+import MoreRoom from "./Pages/MoreRoom";
 function App() {
   const location = useLocation();
   console.log(location.pathname);
@@ -31,14 +32,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/building/:id" element={<Building1View />} />
         <Route path="/booknow/:id" element={<BookRoom />} />
-        <Route path="/ViewTenent" element={<TenentView/>} />
-        <Route path="/success/:id" element={<TenentAddedSuccess/>} />
-        <Route path="/edittenent/:id" element={<EditTenent/>} />
-        <Route path="/buildingedit/:id" element={<EditBuilding/>} />
-        <Route path="/roomedit/:id" element={<RoomsEdit/>} />
-        <Route path="/renewtenent" element={<TenentRenew/>}/>
-        <Route path="/terminated" element={<TenentTermminated/>}/>
-
+        <Route path="/ViewTenent" element={<TenentView />} />
+        <Route path="/success/:id" element={<TenentAddedSuccess />} />
+        <Route path="/edittenent/:id" element={<EditTenent />} />
+        <Route path="/buildingedit/:id" element={<EditBuilding />} />
+        <Route path="/roomedit/:id" element={<RoomsEdit />} />
+        <Route path="/renewtenent" element={<TenentRenew />} />
+        <Route path="/terminated" element={<TenentTermminated />} />
+        <Route path="/addmore" element={<MoreRoom />} />
 
 
       </Routes>

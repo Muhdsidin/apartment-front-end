@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './Room.css';
 import axios from 'axios'
-
+import Addmore from './AddmoreRoom'
 function Room() {
 
 
@@ -118,6 +118,8 @@ console.log(cat)
               <button className='btn-sub' type="submit" onClick={handleUpload}>
                 Upload
               </button>
+              <br />
+              <a href='/addmore' className='btn-add'>Add more?</a>
             </Form>
           </div>
         </Col>
