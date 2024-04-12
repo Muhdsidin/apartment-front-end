@@ -5,6 +5,18 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './Room.css'
 function AddmoreRoom() {
+  const [count , setCount] = useState(0)
+  useEffect(()=>{var fullUrl = window.location.href;
+
+    var number = fullUrl.substr(fullUrl.lastIndexOf('/') + 1);
+    const last = parseInt(number)
+    setCount(last)},
+    [])
+ 
+
+
+
+console.log(count); 
   return (
     <div>
         <Container style={{marginTop:'7em'}}>
@@ -54,7 +66,7 @@ function AddmoreRoom() {
                 Upload
               </button>
               <br />
-              <a href="/addmore" className='btn-add'>Add more?</a>
+              <a href={`/addmore/${count + 1}`} className='btn-add'>Add more?</a>
             </Form>
           </div>
         </Col>

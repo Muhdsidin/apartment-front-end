@@ -15,10 +15,12 @@ import RoomsEdit from "./Pages/RoomsEdit";
 import TenentRenew from "./Pages/TenentRenew";
 import TenentTermminated from "./Pages/TenentTermminated";
 import MoreRoom from "./Pages/MoreRoom";
+import { useState } from "react";
 function App() {
   const location = useLocation();
   console.log(location.pathname);
   const shouldRenderHeader = location.pathname === "/real/admin" || location.pathname === "/upload-rooms" || location.pathname === "/upload-building";
+  const [state , setState] = useState([1,2])
 
 
 
@@ -39,7 +41,9 @@ function App() {
         <Route path="/roomedit/:id" element={<RoomsEdit />} />
         <Route path="/renewtenent" element={<TenentRenew />} />
         <Route path="/terminated" element={<TenentTermminated />} />
-        <Route path="/addmore" element={<MoreRoom />} />
+
+        {state.map((val,index)=>  <Route path={`/addmore/${index+1}`} element={<MoreRoom />} />)}
+      
 
 
       </Routes>

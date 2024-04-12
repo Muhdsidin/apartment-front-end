@@ -16,6 +16,7 @@ function Room() {
  /* const [imageOne, setImageOne] = useState("");
   const [imageTwo, setImageTwo] = useState("");
   const [imageThree, setImageThree] = useState("");*/
+  const [count , setCount ]= useState(0)
 const handleUpload=()=>{
   alert('Room Added')
 }
@@ -119,7 +120,7 @@ console.log(cat)
                 Upload
               </button>
               <br />
-              <a href='/addmore' className='btn-add'>Add more?</a>
+              <a href={`/addmore/${count + 1}`} className='btn-add'>Add more?</a>
             </Form>
           </div>
         </Col>
