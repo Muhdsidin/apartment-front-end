@@ -15,7 +15,7 @@ import RoomsEdit from "./Pages/RoomsEdit";
 import TenentRenew from "./Pages/TenentRenew";
 import TenentTermminated from "./Pages/TenentTermminated";
 import MoreRoom from "./Pages/MoreRoom";
-import { useState } from "react";
+import { useState , Suspense} from "react";
 function App() {
   const location = useLocation();
   console.log(location.pathname);
@@ -27,7 +27,9 @@ function App() {
   return (
     <div>
       {shouldRenderHeader && <Header />}
+      <Suspense fallback={<p>loading..</p>}>
       <Routes>
+       
         <Route path="/room" element={<Room />} />
         <Route path="/buildings" element={<Buildings />} />
         <Route path='/viewrooms' element={<RoomsView />} />
@@ -45,8 +47,9 @@ function App() {
         {state.map((val,index)=>  <Route path={`/addmore/${index+1}`} element={<MoreRoom />} />)}
       
 
-
+        
       </Routes>
+      </Suspense>
 
 
     </div>
