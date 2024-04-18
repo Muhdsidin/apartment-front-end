@@ -26,7 +26,7 @@ function ViewTenent() {
   }, []);
 
   const terminateTannent = async (id) => {
-    const response = await axios("http://localhost:3000/delete-tanennt", {
+    const response = await axios("https://apartment-one.vercel.app/delete-tanennt", {
       method: "POST",
       data: {
          id,

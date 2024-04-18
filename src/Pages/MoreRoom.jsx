@@ -1,11 +1,12 @@
 import React from 'react'
 import AddmoreRoom from '../components/Room/AddmoreRoom'
 import Header from '../components/Header/Header'
-function MoreRoom() {
+function MoreRoom({setState , state}) {
+  //console.log(state)
   return (
     <div>
         <Header/>
-      <AddmoreRoom/>
+      <AddmoreRoom state={state} setState={setState}/>
 
     </div>
   )

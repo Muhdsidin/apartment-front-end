@@ -20,7 +20,9 @@ function App() {
   const location = useLocation();
   console.log(location.pathname);
   const shouldRenderHeader = location.pathname === "/real/admin" || location.pathname === "/upload-rooms" || location.pathname === "/upload-building";
-  const [state , setState] = useState([1,2])
+  const [state , setState] = useState([{},{}])
+  
+  
 
 
 
@@ -44,7 +46,7 @@ function App() {
         <Route path="/renewtenent" element={<TenentRenew />} />
         <Route path="/terminated" element={<TenentTermminated />} />
 
-        {state.map((val,index)=>  <Route path={`/addmore/${index+1}`} element={<MoreRoom />} />)}
+        {state.map((val,index)=>  <Route path={`/addmore/${index+1}`} element={<MoreRoom state={state} setState={setState} />} />)}
       
 
         
