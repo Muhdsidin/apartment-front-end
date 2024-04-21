@@ -7,7 +7,7 @@ function Terminated() {
 
   const terminateTannent = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/get-delete");
+      const response = await axios.post("https://apartment-one.vercel.app/get-delete");
       setData(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
