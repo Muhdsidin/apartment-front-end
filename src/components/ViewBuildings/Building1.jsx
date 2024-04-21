@@ -38,7 +38,7 @@ function Building1() {
       <section className="rc" style={{marginLeft:'auto'}}>
         {data.map((val) => (
     
-          <div class="card" data-aos='zoom-in'>
+          <div class="card" data-aos='zoom-in' data-aos-duration="500">
           <div class="card-info">
             <p class="text-title">{val.title}</p>
             <p class="text-body">{val.book ? "Already Booked" : "Not Booked "}</p>
