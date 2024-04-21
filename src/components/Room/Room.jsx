@@ -68,7 +68,7 @@ console.log(cat)
     <Container style={{marginTop:'7em'}}>
       <Row className="justify-content-center" >
         <Col xs={12} md={8}>
-          <div className="div" >
+          <div className="div"  style={{height:'39em'}}>
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicTitle">
                 <Form.Label>Enter Room NO:</Form.Label>

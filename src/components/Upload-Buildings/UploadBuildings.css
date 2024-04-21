@@ -5,11 +5,8 @@
     border-radius: 8px;
     padding-left: 1em;
     padding-right: 1em; 
-    height: 29em;
-    
 }
 .btn-submit{
-    
     padding: 10px 20px;
     text-decoration: none;
     background-color:rgb(224, 153, 21);
@@ -18,8 +15,6 @@
     transition: background-color 0.3s ease-in-out;
    float: right;
   }
-  
   .btn-submit:hover {
     background-color:orange;
-    
   }
