@@ -41,7 +41,7 @@ navigate('/viewrooms')
       <Container style={{marginTop:'7em'}}>
         <Row className="justify-content-center">
           <Col xs={12} md={8}>
-            <div className="BuildingUplodaFormDiv">
+            <div className="BuildingUplodaFormDiv" style={{height:'39em'}}>
               <form onSubmit={HandleSubmit}>
                 <div class="form-row">
                   <div class="form-group col-md-6">
