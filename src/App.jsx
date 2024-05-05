@@ -12,7 +12,7 @@ import TenentAddedSuccess from "./Pages/TenentAddedSuccess";
 import EditTenent from "./Pages/EditTenent";
 import EditBuilding from "./Pages/EditBuilding";
 import RoomsEdit from "./Pages/RoomsEdit";
-import TenentRenew from "./Pages/TenentRenew";
+
 import TenentTermminated from "./Pages/TenentTermminated";
 import MoreRoom from "./Pages/MoreRoom";
 import { useState , Suspense} from "react";
@@ -43,7 +43,7 @@ function App() {
         <Route path="/edittenent/:id" element={<EditTenent />} />
         <Route path="/buildingedit/:id" element={<EditBuilding />} />
         <Route path="/roomedit/:id" element={<RoomsEdit />} />
-        <Route path="/renewtenent" element={<TenentRenew />} />
+    
         <Route path="/terminated" element={<TenentTermminated />} />
 
         {state.map((val,index)=>  <Route path={`/addmore/${index+1}`} element={<MoreRoom state={state} setState={setState} />} />)}
