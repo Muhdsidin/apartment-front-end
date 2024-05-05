@@ -9,6 +9,7 @@ function Terminated() {
     try {
       const response = await axios.post("https://apartment-one.vercel.app/get-delete");
       setData(response.data);
+      console.log(response.data)
     } catch (error) {
       console.error("Error fetching data:", error);
     }
