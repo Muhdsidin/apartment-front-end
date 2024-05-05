@@ -29,7 +29,7 @@ function App() {
   return (
     <div>
       {shouldRenderHeader && <Header />}
-      <Suspense fallback={<p>loading..</p>}>
+
       <Routes>
        
         <Route path="/room" element={<Room />} />
@@ -46,12 +46,10 @@ function App() {
     
         <Route path="/terminated" element={<TenentTermminated />} />
 
-        {state.map((val,index)=>  <Route path={`/addmore/${index+1}`} element={<MoreRoom state={state} setState={setState} />} />)}
-      
-
+       
         
       </Routes>
-      </Suspense>
+
 
 
     </div>
