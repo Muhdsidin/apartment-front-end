@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer'
 function Banner() {
   return (
     <div>
- <div style={{ position: 'relative' }}  >
+ {/* <div style={{ position: 'relative' }}  >
   <img
     src="https://img.freepik.com/free-vector/white-elegant-texture-background-style_23-2148432200.jpg?size=626&ext=jpg&ga=GA1.2.1043746885.1669217085&semt=sph"
     alt=""
@@ -17,7 +17,7 @@ function Banner() {
   <h3 className='title' data-aos="zoom-right">
     Add Your Your Tenent Now!!
   </h3>
-</div >
+</div > */}
 
 <Container>
   <div className='main-items'>
