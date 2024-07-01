@@ -8,6 +8,8 @@ function Banner() {
     <div style={{ marginTop: '8em' }}>
       <Container>
         <div className='main-items'>
+
+
           <Row className="justify-content-center">
             <Col md={4} className="d-flex justify-content-center">
               <a
@@ -42,6 +44,8 @@ function Banner() {
               </a>
             </Col>
           </Row>
+
+
           <Row className="justify-content-center">
             <Col md={4} className="d-flex justify-content-center">
               <a
@@ -76,6 +80,11 @@ function Banner() {
               </a>
             </Col>
           </Row>
+
+
+          
+
+
         </div>
       </Container>
       <Footer />

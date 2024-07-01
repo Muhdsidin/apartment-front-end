@@ -1,0 +1,42 @@
+.terminated {
+    background-color: #121212;
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 2em;
+  }
+  
+  .heading-renew {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  
+  .custom-table {
+    background-color: #1e1e1e;
+    border-color: #4a4a4a;
+  }
+  
+  .custom-table thead th {
+    background-color: #2e2e2e;
+    border-color: #4a4a4a;
+    color: #ffffff;
+  }
+  
+  .custom-table tbody tr {
+    background-color: #2e2e2e;
+    border-color: #4a4a4a;
+    color: #ffffff;
+  }
+  
+  .custom-table tbody tr:nth-of-type(odd) {
+    background-color: #1e1e1e;
+  }
+  
+  .custom-table tbody tr:hover {
+    background-color: #3a3a3a;
+  }
+  
+  .custom-table td, .custom-table th {
+    border-color: #4a4a4a;
+  }
+  

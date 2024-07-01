@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
-import axios from "axios";
+import axios from 'axios';
+import './Terminated.css'; // Make sure to create this CSS file and add the styles below
 
 function Terminated() {
   const [data, setData] = useState([]);
@@ -9,7 +10,7 @@ function Terminated() {
     try {
       const response = await axios.post("https://apartment-one.vercel.app/get-delete");
       setData(response.data);
-      console.log(response.data)
+      console.log(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -20,10 +21,10 @@ function Terminated() {
   }, []);
 
   return (
-    <div>
+    <div className='terminated' style={{marginTop:"100px"}}>
       <div className='tb'>
         <h2 className='heading-renew'>Terminated Tenants</h2>
-        <Table striped bordered hover>
+        <Table striped bordered hover variant="dark" className="custom-table">
           <thead>
             <tr>
               <th>#</th>
