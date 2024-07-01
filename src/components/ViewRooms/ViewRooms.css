@@ -1,52 +1,70 @@
+.view-rooms {
+  background-color: #121212;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 2em;
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.form-control {
+  background-color: transparent;
+  border: 1px solid #555;
+  color: #fff;
+
+}
+
+.btn-primary {
+  background-color: #333;
+  border: 1px solid #555;
+}
+
+.buildings-container {
+  width: 100%;
+  margin-top: 2em;
+}
+
+.center-container {
+  text-align: center;
+  margin: 1em;
+}
 
 .building-1 {
-    display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    background-color:rgb(64, 134, 226);
-    color: #fff;
-    border-radius: 5px;
-    transition: background-color 0.3s ease-in-out;
-    text-align: center;
-    width: 8em;
-    margin: 10px; 
-  }
-.building-1:hover{
-  background-color:rgb(71, 121, 187);
+  display: inline-block;
+  background-color: #1e1e1e;
+  border: 1px solid #4a4a4a;
+  color: #fff;
+  padding: 1em;
+  text-decoration: none;
+  border-radius: 4px;
+  margin: 1em;
+  transition: background-color 0.3s;
 }
 
-.delete-building{
-  padding: 10px 20px;
-  text-decoration: none;
+.building-1:hover {
+  background-color: #333;
+}
+
+.delete-building, .edit-building {
+  display: inline-block;
+  background-color: #fffefe;
+  border: 1px solid #f8f4f4;
   color: #fff;
-  border-radius: 5px;
-  transition: background-color 0.3s ease-in-out;
-  width: 8em;
-  margin: 10px; 
+  padding: 0.5em;
+  text-decoration: none;
+  border-radius: 4px;
+  margin: 0.5em;
+  transition: background-color 0.3s;
 }
-.room-items {
-  height: max-content;
-  width: 89em;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgb(74, 110, 209);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    margin-top: 21vh;
-    border-radius: 10px;
+
+.delete-building:hover, .edit-building:hover {
+  background-color: #444;
 }
-@media only screen and (max-width: 800px){
-  .room-items{
-    width: 23em;
-  }
-}
-.center-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-top: -8em;
+
+.bi-trash, .bi-pen {
+  vertical-align: middle;
 }

@@ -117,10 +117,10 @@ console.log(cat)
               </Form.Group>
 
               <button className='btn-sub' type="submit" onClick={handleUpload}>
-                Upload
+                Upload Ur Room
               </button>
               <br />
-              <a href={`/addmore/${count + 1}`} className='btn-add'>Add more?</a>
+
             </Form>
           </div>
         </Col>
