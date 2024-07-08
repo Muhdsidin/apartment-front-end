@@ -12,7 +12,7 @@ import TenentAddedSuccess from "./Pages/TenentAddedSuccess";
 import EditTenent from "./Pages/EditTenent";
 import EditBuilding from "./Pages/EditBuilding";
 import RoomsEdit from "./Pages/RoomsEdit";
-
+import AdminTrue from "./Pages/AdminTrue";
 import TenentTermminated from "./Pages/TenentTermminated";
 import MoreRoom from "./Pages/MoreRoom";
 import { useState , Suspense} from "react";
@@ -35,7 +35,7 @@ function App() {
         <Route path="/room" element={<Room />} />
         <Route path="/buildings" element={<Buildings />} />
         <Route path='/viewrooms' element={<RoomsView />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/building/:id" element={<Building1View />} />
         <Route path="/booknow/:id" element={<BookRoom />} />
         <Route path="/ViewTenent" element={<TenentView />} />
@@ -43,7 +43,7 @@ function App() {
         <Route path="/edittenent/:id" element={<EditTenent />} />
         <Route path="/buildingedit/:id" element={<EditBuilding />} />
         <Route path="/roomedit/:id" element={<RoomsEdit />} />
-    
+    <Route path="/" element={<AdminTrue />} />
         <Route path="/terminated" element={<TenentTermminated />} />
 
        
