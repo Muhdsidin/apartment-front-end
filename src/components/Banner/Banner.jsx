@@ -4,6 +4,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Footer from '../Footer/Footer';
 
 function Banner() {
+
+  
   return (
     <div style={{ marginTop: '8em' }}>
       <Container>
@@ -13,9 +15,10 @@ function Banner() {
           <Row className="justify-content-center">
             <Col md={4} className="d-flex justify-content-center">
               <a
+              data-aos="zoom-in"
                 href="/buildings"
                 className="box-3"
-                data-aos="zoom-in"
+                
                 data-aos-duration="2500"
                 style={{ marginTop: '4em', width: '10em' }}
               >

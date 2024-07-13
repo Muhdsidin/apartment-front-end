@@ -61,7 +61,7 @@ function Header() {
                 <li className="none-hid"><a href="/room">Upload Rooms</a></li>
                 <li className="none-hid"><a href="/viewrooms">View Rooms</a></li>
                 <li className="none-hid"><a href="/viewtenent">View Tenent</a></li>
-                <li className="none"><a href="/">Home</a></li>
+                <li className="none"><a href="/home">Home</a></li>
 
 
 
