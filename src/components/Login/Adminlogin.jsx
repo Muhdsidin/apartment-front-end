@@ -3,9 +3,25 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 import { Container } from 'react-bootstrap';
+import axios from 'axios';
 function Adminlogin() {
-    const [Email, setEmail] = useState("")
-    const [Password, setPassword] = useState()
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState()
+
+    const Login = async ()=>{
+        try {
+            const response = await axios("https://apartment-one.vercel.app/admin-login",{
+               method:"POST",
+               data:{
+                email,
+                password
+               }
+            })
+            console.log(response.data)
+        } catch (error) {
+           console.log(error.message) 
+        }
+    }
 
     return (
         <Container style={{ marginTop: '7em' }}>

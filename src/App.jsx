@@ -16,6 +16,8 @@ import AdminTrue from "./Pages/AdminTrue";
 import TenentTermminated from "./Pages/TenentTermminated";
 import MoreRoom from "./Pages/MoreRoom";
 import { useState , Suspense} from "react";
+import { ProtectCart } from "./utils/ProtectRoute";
+
 function App() {
   const location = useLocation();
   console.log(location.pathname);
@@ -30,8 +32,10 @@ function App() {
     <div>
       {shouldRenderHeader && <Header />}
 
+        
       <Routes>
-       
+       <Route element={<ProtectCart />} >
+
         <Route path="/room" element={<Room />} />
         <Route path="/buildings" element={<Buildings />} />
         <Route path='/viewrooms' element={<RoomsView />} />
@@ -46,9 +50,12 @@ function App() {
     <Route path="/" element={<AdminTrue />} />
         <Route path="/terminated" element={<TenentTermminated />} />
 
-       
+
+        </Route>
+
         
       </Routes>
+        
 
 
 
