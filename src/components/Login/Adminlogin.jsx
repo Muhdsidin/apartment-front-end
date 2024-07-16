@@ -4,11 +4,15 @@ import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import axios from 'axios';
+import Cookies from 'js-cookie'
+import { useNavigate } from 'react-router-dom';
 function Adminlogin() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState()
+    const navigate = useNavigate()
 
-    const Login = async ()=>{
+    const Login = async (e)=>{
+        e.preventDefault()
         try {
             const response = await axios("https://apartment-one.vercel.app/admin-login",{
                method:"POST",
@@ -18,6 +22,8 @@ function Adminlogin() {
                }
             })
             console.log(response.data)
+            Cookies.set("token",response.data)
+            navigate("/home")
         } catch (error) {
            console.log(error.message) 
         }
@@ -40,7 +46,7 @@ function Adminlogin() {
                 {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group> */}
-                <Button variant="" type="submit" style={{ float: "right", color: "black", background: 'white' }}>
+                <Button onClick={Login} variant="" type="submit" style={{ float: "right", color: "black", background: 'white' }}>
                     Submit
                 </Button>
             </Form>
