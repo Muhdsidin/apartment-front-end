@@ -26,12 +26,13 @@ function Adminlogin() {
             navigate("/home")
         } catch (error) {
            console.log(error.message) 
+           alert("invalid password or email")
         }
     }
 
     return (
         <Container style={{ marginTop: '7em' }}>
-            <Form>
+            <Form >
                 <h2 style={{ textAlign: 'center', color: "white" }}>Login To Continue</h2>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label >Email address</Form.Label>
