@@ -1,20 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Banner.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import Footer from '../Footer/Footer';
+import { driver } from "driver.js";
 
 function Banner() {
+  const driverFunction = driver()
+
+ 
+
+useEffect(()=>{
+  driverFunction.highlight({
+    element: "#some-element",
+    popover: {
+      title: "for upload Building",
+      description: "U want Tour ?"
+    }
+  })
+},[])
 
   
   return (
-    <div style={{ marginTop: '8em' }}>
+    <div style={{ marginTop: '8em' }} >
       <Container>
-        <div className='main-items'>
+        
+        <div className='main-items' >
 
 
           <Row className="justify-content-center">
-            <Col md={4} className="d-flex justify-content-center">
+            <Col md={4} className="d-flex justify-content-center" id='some-element'  >
               <a
+              
               data-aos="zoom-in"
                 href="/buildings"
                 className="box-3"

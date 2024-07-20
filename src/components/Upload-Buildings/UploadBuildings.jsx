@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './UploadBuildings.css';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 function UploadBuildings() {
   const navigate = useNavigate();
@@ -28,8 +29,11 @@ function UploadBuildings() {
         }
       });
       console.log(response.data);
-      alert('Building Added');
-      navigate('/viewrooms');
+      toast.success('uploaded Redirecting ');
+      setTimeout(() => {
+        
+        navigate('/viewrooms');
+      },5000)
     } catch (error) {
       console.log(error);
     }
@@ -130,6 +134,7 @@ function UploadBuildings() {
             </div>
           </Col>
         </Row>
+        <ToastContainer />
       </Container>
     </div>
   );
