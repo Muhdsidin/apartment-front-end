@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import "./ViewTenent.css";
 import axios from "axios";
-
+import Table from 'react-bootstrap/Table';
 
 
 function ViewTenent() {
   const [data, setData] = useState([]);
   const [input, setInput] = useState("");
   const [searchdata, setSearchData] = useState();
- var total = data.from - data.to
- console.log(total)
+  var total = data.from - data.to
+  console.log(total)
 
   const fetchBooked = async () => {
     const response = await axios(
@@ -22,17 +22,17 @@ function ViewTenent() {
 
   useEffect(() => {
     fetchBooked();
-    
+
   }, []);
 
   const terminateTannent = async (id) => {
     const response = await axios("https://apartment-one.vercel.app/delete-tanennt", {
       method: "POST",
       data: {
-         id,
+        id,
       },
     });
-    
+
   };
 
   const search = async () => {
@@ -51,12 +51,12 @@ function ViewTenent() {
           {" "}
           Search
         </button> */}
-        <form class="d-flex sr">
+        {/* <form class="d-flex sr">
         <input class="form-control me-2" onChange={(e) => setInput(e.target.value)}  type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn btn-outline-primary" type="submit" onClick={search} value={input}>
           {" "}Search</button>
-      </form>
-        <table className="table">
+      </form> */}
+        <Table striped bordered hover variant="dark" className="custom-table">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -72,88 +72,48 @@ function ViewTenent() {
             </tr>
           </thead>
           <tbody>
-            {searchdata ? (
-              <tr>
-                <th scope="row">1</th>
-                <td>{searchdata.name}</td>
-                <td>{searchdata.address}</td>
-                <td>{searchdata.country}</td>
-                <td>{searchdata.state}</td>
 
-                <td>{searchdata.from}</td>
-                <td>{searchdata.to}</td>
-                <td>{searchdata.total}</td>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><a href=''>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  className="bi bi-pen"
+                  viewBox="0 0 16 16"
 
-                <td>
-                  <a
-                    href={`/edittenent/${searchdata._id}`}
-                    className="btn btn-primary"
+                >
+                  <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z" />
+                </svg>
+              </a></td>
+              <td>
+                <a className="delete-room">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    className="bi bi-trash trsh"
+                    viewBox="0 0 16 16"
+                    style={{ cursor: "pointer",color:'red' }}
                   >
-                    Renew
-                  </a>
-                </td>
-                <td>
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => terminateTannent(searchdata._id)}
-                  >
-                    Terminate
-                  </button>
-                </td>
-              </tr>
-            ) : (
-              data.map((val) => (
-                <tr>
-                  {val.terminate ? (
-                    <strike>
-                      <th scope="row" className="">
-                        1
-                      </th>{" "}
-                      <td>{val.name}</td>
-                      <td>{val.address}</td>
-                      <td>{val.country}</td>
-                      <td>{val.state}</td>
-                      <td>{val.from}</td>
-                      <td>{val.to}</td>
-                      <td>{total}</td>
-                    </strike>
-                  ) : (
-                    <>
-                    <th scope="row" className="">
-                      1
-                    </th>
-                  
-                  
-                  <td>{val.name}</td>
-                  <td>{val.address}</td>
-                  <td>{val.country}</td>
-                  <td>{val.state}</td>
-
-                  <td>{val.from}</td>
-                  <td>{val.to}</td>
-                  <td>{val.total}</td>
-
-                  <td>
-                   
-                    <a href={`/edittenent/${val._id}`}><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m5 16l-1 4l4-1L19.586 7.414a2 2 0 0 0 0-2.828l-.172-.172a2 2 0 0 0-2.828 0zM15 6l3 3m-5 11h8"/></svg></a>
-                  </td>
-                  <td>
-                    {/* <button
-                      className="btn btn-danger"
-                      onClick={() => terminateTannent(val._id)}
-                    >
-                      Terminate
-                    </button> */}
-       <svg onClick={()=> terminateTannent(val._id)} className="ter" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6z"/></svg>
-
-                  </td>
-                  </>
-                )}
-                </tr>
-              ))
-            )}
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                  </svg>
+                </a>
+              </td>
+            </tr>
           </tbody>
-        </table>
+        </Table>
       </Container>
     </div>
   );

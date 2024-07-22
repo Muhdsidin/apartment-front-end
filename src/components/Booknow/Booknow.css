@@ -1,6 +1,6 @@
 .BuildingUplodaFormDiv{
   margin-top: 5em;
-  box-shadow: 0 0 10px rgb(74, 110, 209);
+  box-shadow: 0 0 10px rgb(255, 255, 255);
   border: 1.5px solid #000000;
   border-radius: 8px;
   padding-left: 1em;
@@ -12,8 +12,8 @@
   
   padding: 10px 20px;
   text-decoration: none;
-  background-color:rgb(64, 134, 226);
-  color: #fff;
+  background-color:rgb(180, 180, 180);
+  color: #000000;
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
  float: right;

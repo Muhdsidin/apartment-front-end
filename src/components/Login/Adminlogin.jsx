@@ -10,7 +10,7 @@ function Adminlogin() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState()
     const navigate = useNavigate()
-
+      
     const Login = async (e)=>{
         e.preventDefault()
         try {

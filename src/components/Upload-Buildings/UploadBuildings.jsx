@@ -127,7 +127,7 @@ function UploadBuildings() {
                 </div>
                 <br />
 
-                <button type="submit" className="btn-submit" style={{background:"black"}}>
+                <button type="submit" className="btn-submit" style={{background:"white"}}>
                   Upload Building
                 </button>
               </form>

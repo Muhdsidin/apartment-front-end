@@ -14,7 +14,7 @@
 }
 
 .card-img {
-    background-color:rgb(64, 134, 226);
+    background-color:rgb(0, 0, 0);
     height: 40%;
     width: 100%;
     border-radius: .5rem;
@@ -59,7 +59,7 @@ svg {
     cursor: pointer;
     border-radius: 50px;
     transition: .3s ease-in-out;
-    background-color:rgb(64, 134, 226);
+    background-color:rgb(252, 252, 252);
 
 }
 
@@ -70,8 +70,8 @@ svg {
 }
 
 .card-button:hover {
-    border: 1px solid rgb(37, 102, 163);
-    background-color:rgb(63, 122, 199);
+    border: 1px solid rgb(0, 0, 0);
+    background-color:rgb(194, 189, 189);
 }
 
 @media only screen and (min-width:945px) {
@@ -85,6 +85,9 @@ svg {
 .delete-room {
     text-decoration: none;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    color: #000000;
 }
 
 .link-to-room {
@@ -110,7 +113,7 @@ svg {
     background: #f5f5f5;
     position: relative;
     overflow: visible;
-    box-shadow: 0 0 10px rgb(74, 110, 209);
+    box-shadow: 0 0 10px rgb(0, 0, 0);
   border: 1.5px solid #000000;
     margin-bottom: 20px;
     /* Add margin between cards */
@@ -166,3 +169,15 @@ svg {
 
 
 
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .delete-room {
+    margin-right: 8px; /* Adjust the spacing between buttons */
+  }
+  .trsh{
+    cursor: pointer;
+  }

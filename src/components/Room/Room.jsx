@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import './Room.css';
 import axios from 'axios'
 import Addmore from './AddmoreRoom'
+import { ToastContainer, toast } from 'react-toastify';
 function Room() {
 
 
@@ -18,7 +19,8 @@ function Room() {
   const [imageThree, setImageThree] = useState("");*/
   const [count , setCount ]= useState(0)
 const handleUpload=()=>{
-  alert('Room Added')
+  console.log(response.data);
+      
 }
   const handleSubmit = async(event) => {
     try {
@@ -38,6 +40,11 @@ const handleUpload=()=>{
      
     })
     console.log(response.data)
+    toast.success('Edited Redirecting');
+    setTimeout(() => {
+      
+      navigate('/viewrooms');
+    },5000)
     } catch (error) {
       console.log(error)
     }
@@ -48,6 +55,7 @@ const handleUpload=()=>{
     const response = await axios("https://apartment-one.vercel.app/get-building")
     console.log(response.data)
     setData(response.data)
+   
     
    }
    
@@ -125,6 +133,7 @@ console.log(cat)
           </div>
         </Col>
       </Row>
+      <ToastContainer />
     </Container>
   );
 }

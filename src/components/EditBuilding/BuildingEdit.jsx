@@ -42,6 +42,7 @@ function BuildingEdit() {
           id
         }
       })
+      
       console.log(response.data)
       navigate(-1)
     }
