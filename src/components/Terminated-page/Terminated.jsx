@@ -5,8 +5,10 @@ import './Terminated.css'; // Make sure to create this CSS file and add the styl
 
 function Terminated() {
   const [data, setData] = useState([]);
+  const [loading , setLoading] = useState(false)
 
   const terminateTannent = async () => {
+    setLoading(true)
     try {
       const response = await axios.post("https://apartment-one.vercel.app/get-delete");
       setData(response.data);
@@ -14,13 +16,18 @@ function Terminated() {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
+    setLoading(false)
   };
 
   useEffect(() => {
     terminateTannent();
   }, []);
 
+  if (loading) {
+    return <div style={{marginTop:"300px",textAlign:"center",color:"white"}}>Loading...</div>;
+  }
   return (
+    
     <div className='terminated' style={{marginTop:"100px"}}>
       <div className='tb'>
         <h2 className='heading-renew'>Terminated Tenants</h2>
@@ -62,6 +69,7 @@ function Terminated() {
         </Table>
       </div>
     </div>
+  
   );
 }
 

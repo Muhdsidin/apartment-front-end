@@ -111,7 +111,7 @@ function ViewTenent() {
                   </svg>
                 </a>
               </td>
-            </tr>
+            </tr> 
           </tbody>
         </Table>
       </Container>
